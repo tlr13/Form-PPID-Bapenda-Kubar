@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Permohonan Informasi Publik - PPID Kabupaten Kutai Barat</title>
+  <meta name="description" content="Formulir Permohonan Informasi Publik PPID Pemerintah Kabupaten Kutai Barat (Versi Embed CMS-KUBAR)." />
+  <style>
+    /* ==========================================================================
+       PPID Kabupaten Kutai Barat — Versi Embed Iframe untuk CMS-KUBAR
+       Tanpa Header/Navbar/Footer agar tidak dobel di dalam halaman CMS-KUBAR
+       ========================================================================== */
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      --navy-950: #091d32;
+      --navy-900: #0e2a47;
+      --blue-700: #0d4ea6;
+      --blue-600: #1565c0;
+      --blue-100: #e7f1fd;
+      --blue-50: #f2f7fe;
+
+      --teal-600: #0d856b;
+      --teal-100: #e3f7f1;
+
+      --amber-600: #c27803;
+      --amber-100: #fef3c7;
+
+      --red-600: #dc2626;
+      --red-100: #fee2e2;
+
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-pill: 9999px;
+
+      --shadow-md: 0 6px 20px rgba(14, 42, 71, 0.07), 0 1px 4px rgba(14, 42, 71, 0.04);
+      --shadow-lg: 0 18px 40px rgba(14, 42, 71, 0.16), 0 4px 12px rgba(14, 42, 71, 0.08);
+
+      margin: 0;
+      padding: 16px;
+      font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--slate-800);
+      background-color: transparent;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font-family: inherit; font-size: inherit; }
+
+    .embed-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Banner Identitas PPID Kutai Barat Ringkas */
+    .embed-hero {
+      background: linear-gradient(135deg, #0b243e 0%, #124478 58%, #0e6c67 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-md);
+    }
+
+    .embed-hero-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .embed-hero h1 {
+      margin: 0;
+      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+
+    .embed-hero p {
+      margin: 3px 0 0;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .embed-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.16s ease;
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Surface Cards */
+    .surface-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .surface-card + .surface-card {
+      margin-top: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--slate-200);
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+    }
+
+    .card-header-text h2 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .card-header-text p {
+      margin: 3px 0 0;
+      font-size: 0.85rem;
+      color: var(--slate-500);
+    }
+
+    .card-body {
+      padding: 24px 26px;
+    }
+
+    .btn-outline-list {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--blue-600);
+      background: var(--blue-50);
+      color: var(--blue-700);
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn-outline-list:hover {
+      background: var(--blue-600);
+      color: var(--white);
+    }
+
+    .btn-outline-list svg { width: 15px; height: 15px; }
+
+    /* Form Sections */
+    .form-section + .form-section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-weight: 800;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .section-title-row h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 20px;
+    }
+
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.span-2 { grid-column: 1 / -1; }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .req { color: var(--red-600); font-weight: 700; }
+
+    .form-control {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      background-color: var(--white);
+      color: var(--slate-900);
+      font-size: 0.89rem;
+      line-height: 1.45;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .form-control::placeholder { color: var(--slate-400); }
+    .form-control:hover { border-color: var(--slate-400); }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+    }
+
+    textarea.form-control { resize: vertical; min-height: 88px; }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    .form-field.has-error .form-control,
+    .form-field.has-error .upload-dropzone,
+    .form-field.has-error .slide-verify-track {
+      border-color: var(--red-600);
+      background-color: #fffafa;
+    }
+
+    .field-error { display: none; font-size: 0.77rem; font-weight: 500; color: var(--red-600); }
+    .form-field.has-error .field-error { display: block; }
+    .field-hint { font-size: 0.77rem; color: var(--slate-500); margin: 0; }
+
+    .instansi-filter-wrap { display: flex; flex-direction: column; gap: 8px; }
+    .instansi-search-input {
+      min-height: 36px;
+      padding: 6px 12px 6px 34px;
+      font-size: 0.83rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 10px center;
+      background-color: var(--slate-50);
+    }
+
+    /* File Upload */
+    .upload-dropzone {
+      position: relative;
+      border: 1.5px dashed var(--slate-300);
+      border-radius: var(--radius-md);
+      background: var(--slate-50);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background-color 0.18s ease;
+    }
+    .upload-dropzone:hover, .upload-dropzone.drag-over { border-color: var(--blue-600); background: var(--blue-50); }
+    .upload-dropzone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .upload-icon-box {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--white); border: 1px solid var(--slate-200);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue-600); flex-shrink: 0;
+    }
+    .upload-text-main { font-size: 0.87rem; font-weight: 600; color: var(--slate-800); }
+    .upload-text-main span { color: var(--blue-600); text-decoration: underline; }
+    .upload-preview {
+      display: none; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 11px 14px; border: 1px solid var(--slate-200); border-radius: var(--radius-md); background: var(--white);
+    }
+    .upload-preview.active { display: flex; }
+    .upload-preview-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .upload-thumb { width: 54px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid var(--slate-200); flex-shrink: 0; }
+    .upload-meta { min-width: 0; }
+    .upload-filename { font-size: 0.84rem; font-weight: 600; color: var(--slate-800); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 320px; }
+    .upload-filesize { font-size: 0.75rem; color: var(--teal-600); font-weight: 600; }
+    .btn-remove-file {
+      padding: 6px 11px; border-radius: 6px; border: 1px solid #fecaca;
+      background: #fef2f2; color: var(--red-600); font-size: 0.78rem; font-weight: 600; cursor: pointer;
+    }
+    .btn-remove-file:hover { background: var(--red-600); color: var(--white); }
+
+    /* Slide To Verify */
+    .verify-block {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--slate-200);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .slide-verify-wrapper { max-width: 350px; width: 100%; }
+    .slide-verify-track {
+      position: relative; height: 46px; border-radius: var(--radius-sm);
+      background: #edf2f7; border: 1px solid var(--slate-300);
+      overflow: hidden; user-select: none; touch-action: none;
+    }
+    .slide-verify-fill { position: absolute; top: 0; left: 0; bottom: 0; width: 0; background: linear-gradient(90deg, #16a34a 0%, #0d9488 100%); }
+    .slide-verify-label {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 0.84rem; font-weight: 600; color: var(--slate-600); pointer-events: none;
+    }
+    .slide-verify-track.verified { border-color: var(--teal-600); }
+    .slide-verify-track.verified .slide-verify-label { color: var(--white); padding-right: 42px; }
+    .slide-verify-knob {
+      position: absolute; top: 2px; left: 2px; width: 42px; height: 40px;
+      border-radius: 5px; border: 1px solid var(--slate-300); background: var(--white);
+      color: var(--blue-600); display: flex; align-items: center; justify-content: center;
+      cursor: grab; box-shadow: 0 2px 6px rgba(14, 42, 71, 0.14); z-index: 2;
+    }
+    .slide-verify-knob:active { cursor: grabbing; }
+    .slide-verify-track.verified .slide-verify-knob { color: var(--teal-600); border-color: rgba(255, 255, 255, 0.7); cursor: default; }
+
+    /* Form Buttons */
+    .form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 43px; padding: 9px 20px; border-radius: var(--radius-sm);
+      font-size: 0.88rem; font-weight: 600; cursor: pointer; border: 1px solid transparent; transition: all 0.16s ease;
+    }
+    .btn-secondary { background: var(--white); border-color: var(--slate-300); color: var(--slate-700); }
+    .btn-secondary:hover { background: var(--slate-100); border-color: var(--slate-400); color: var(--slate-900); }
+    .btn-primary { background: var(--blue-600); color: var(--white); box-shadow: 0 3px 10px rgba(21, 101, 192, 0.24); }
+    .btn-primary:hover:not(:disabled) { background: var(--blue-700); transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: 0.72; cursor: not-allowed; }
+    .spinner {
+      width: 15px; height: 15px; border: 2px solid rgba(255, 255, 255, 0.35);
+      border-top-color: #ffffff; border-radius: 50%; animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* DataGrid */
+    .dx-toolbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 13px 18px; background: var(--slate-50); border-bottom: 1px solid var(--slate-200);
+    }
+    .dx-group-panel {
+      flex: 1 1 250px; min-height: 36px; padding: 5px 12px;
+      border: 1.5px dashed var(--slate-300); border-radius: var(--radius-sm); background: var(--white);
+      display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.81rem; color: var(--slate-400);
+    }
+    .dx-group-panel.drop-active { border-color: var(--blue-600); background: var(--blue-50); color: var(--blue-700); }
+    .group-chip {
+      display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px;
+      border-radius: var(--radius-pill); background: var(--blue-100); color: var(--blue-700);
+      font-size: 0.77rem; font-weight: 600;
+    }
+    .group-chip button { border: none; background: transparent; color: var(--blue-700); cursor: pointer; padding: 0; font-size: 0.9rem; line-height: 1; }
+    .dx-tools-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: relative; }
+    .dx-search-input {
+      min-height: 35px; width: 210px; padding: 6px 11px 6px 32px;
+      border: 1px solid var(--slate-300); border-radius: var(--radius-sm);
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") no-repeat 10px center;
+      font-size: 0.83rem; color: var(--slate-800);
+    }
+    .dx-search-input:focus { outline: none; border-color: var(--blue-600); }
+    .dx-icon-btn {
+      display: inline-flex; align-items: center; gap: 6px; height: 35px; padding: 0 11px;
+      border-radius: var(--radius-sm); border: 1px solid var(--slate-300); background: var(--white);
+      color: var(--slate-700); font-size: 0.81rem; font-weight: 600; cursor: pointer;
+    }
+    .dx-icon-btn:hover { border-color: var(--blue-600); color: var(--blue-600); background: var(--blue-50); }
+    .dx-icon-btn svg { width: 14px; height: 14px; }
+    .column-chooser-popover {
+      position: absolute; top: calc(100% + 6px); right: 0; width: 230px;
+      background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg); padding: 12px; z-index: 40; display: none;
+    }
+    .column-chooser-popover.open { display: block; }
+    .column-chooser-title { font-size: 0.76rem; font-weight: 700; color: var(--navy-900); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--slate-100); }
+    .column-chooser-item { display: flex; align-items: center; gap: 8px; padding: 5px 4px; font-size: 0.83rem; color: var(--slate-700); cursor: pointer; }
+    .column-chooser-item input { accent-color: var(--blue-600); }
+
+    .dx-table-wrap { position: relative; width: 100%; overflow-x: auto; }
+    .dx-loading-overlay { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.78); display: none; align-items: center; justify-content: center; z-index: 10; }
+    .dx-loading-overlay.active { display: flex; }
+    .dx-loading-pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px;
+      border-radius: var(--radius-pill); background: var(--white); border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-md); font-size: 0.84rem; font-weight: 600; color: var(--navy-900);
+    }
+    .dx-loading-pill .spinner { border-color: var(--blue-100); border-top-color: var(--blue-600); }
+    .dx-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; text-align: left; }
+    .dx-table thead th {
+      background: #f8fafc; color: var(--slate-700); font-weight: 700; font-size: 0.79rem;
+      padding: 11px 13px; border-bottom: 1px solid var(--slate-200); white-space: nowrap; user-select: none;
+    }
+    .dx-table thead th.sortable { cursor: pointer; }
+    .dx-table thead th.sortable:hover { background: var(--blue-50); color: var(--blue-700); }
+    .th-content { display: inline-flex; align-items: center; gap: 5px; }
+    .sort-ind { font-size: 0.69rem; color: var(--slate-400); }
+    .dx-table tbody td { padding: 11px 13px; border-bottom: 1px solid var(--slate-100); color: var(--slate-700); vertical-align: top; }
+    .dx-table tbody tr:hover { background-color: #f8fbff; }
+    .dx-group-row td { background: #eef4fb !important; color: var(--navy-900) !important; font-weight: 700; font-size: 0.82rem; padding: 8px 13px !important; }
+
+    .code-badge {
+      display: inline-block; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.77rem; font-weight: 700; padding: 3px 8px; border-radius: 5px;
+      background: var(--slate-100); color: var(--navy-900); border: 1px solid var(--slate-200);
+    }
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
+      border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 700; white-space: nowrap;
+    }
+    .status-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .status-selesai { background: var(--teal-100); color: var(--teal-600); }
+    .status-dikirim { background: var(--blue-100); color: var(--blue-700); }
+    .status-diproses { background: var(--amber-100); color: var(--amber-600); }
+    .btn-detail-row {
+      display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 6px;
+      border: 1px solid var(--blue-600); background: var(--white); color: var(--blue-600);
+      font-size: 0.77rem; font-weight: 600; cursor: pointer;
+    }
+    .btn-detail-row:hover { background: var(--blue-600); color: var(--white); }
+    .td-clamp { max-width: 260px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .dx-pager {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 12px 18px; background: var(--white); border-top: 1px solid var(--slate-200);
+    }
+    .dx-page-sizes, .dx-page-nums { display: flex; align-items: center; gap: 4px; }
+    .dx-size-btn, .dx-page-btn {
+      min-width: 30px; height: 30px; padding: 0 8px; border-radius: 6px;
+      border: 1px solid transparent; background: transparent; color: var(--slate-600);
+      font-size: 0.81rem; font-weight: 600; cursor: pointer;
+    }
+    .dx-size-btn:hover, .dx-page-btn:hover:not(:disabled) { background: var(--slate-100); color: var(--navy-900); }
+    .dx-size-btn.active, .dx-page-btn.active { background: var(--blue-600); color: var(--white); }
+    .dx-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .dx-pages-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .dx-page-info { font-size: 0.79rem; color: var(--slate-500); }
+
+    /* Info Strip Bawah Ringkas */
+    .kubar-info-bar {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.81rem;
+      color: var(--slate-600);
+    }
+    .kubar-info-bar strong { color: var(--navy-900); }
+
+    /* Modals & Toasts */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(9, 29, 50, 0.56); backdrop-filter: blur(3px);
+      z-index: 1200; display: none; align-items: center; justify-content: center; padding: 18px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-dialog {
+      width: 100%; max-width: 600px; max-height: 90vh; background: var(--white);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; background: var(--navy-900); color: var(--white); }
+    .modal-head h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+    .modal-close { border: none; background: rgba(255, 255, 255, 0.14); color: var(--white); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 1.05rem; line-height: 1; }
+    .modal-body { padding: 20px; overflow-y: auto; }
+    .modal-foot { padding: 13px 20px; border-top: 1px solid var(--slate-200); background: var(--slate-50); display: flex; justify-content: flex-end; }
+    .detail-section-title { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-600); margin: 16px 0 8px; }
+    .detail-section-title:first-child { margin-top: 0; }
+    .detail-kv-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .detail-kv-table tr { border-bottom: 1px solid var(--slate-100); }
+    .detail-kv-table th { width: 38%; text-align: left; padding: 8px 10px 8px 0; color: var(--slate-500); font-weight: 600; vertical-align: top; }
+    .detail-kv-table td { padding: 8px 0; color: var(--slate-800); font-weight: 500; }
+    .receipt-box { background: var(--teal-100); border: 1px solid #a7f3d0; border-radius: var(--radius-md); padding: 14px 16px; text-align: center; margin-bottom: 16px; }
+    .receipt-code-row { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; background: var(--white); padding: 7px 14px; border-radius: var(--radius-sm); border: 1px solid #6ee7b7; }
+    .receipt-code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 1.2rem; font-weight: 800; letter-spacing: 0.08em; color: var(--navy-900); }
+
+    .toast-stack { position: fixed; top: 14px; right: 14px; z-index: 1400; display: flex; flex-direction: column; gap: 8px; max-width: 340px; }
+    .toast { padding: 11px 15px; border-radius: var(--radius-md); background: var(--navy-900); color: var(--white); font-size: 0.84rem; font-weight: 500; box-shadow: var(--shadow-lg); }
+    .toast.toast-success { background: var(--teal-600); }
+    .toast.toast-error { background: var(--red-600); }
+
+    @media (max-width: 720px) {
+      body { padding: 10px; }
+      .card-header, .card-body { padding: 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-actions { justify-content: stretch; }
+      .form-actions .btn { flex: 1 1 auto; }
+      .dx-search-input, .dx-tools-right { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="embed-container">
+    <!-- Banner Identitas Ringkas PPID Kabupaten Kutai Barat -->
+    <div class="embed-hero">
+      <div class="embed-hero-left">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 3L6 10V23.5C6 34.4 13.7 42.3 24 45C34.3 42.3 42 34.4 42 23.5V10L24 3Z" fill="#FFFFFF" fill-opacity="0.14" stroke="#FFFFFF" stroke-width="1.6"/>
+          <polygon points="24,10 25.8,14.5 30.5,14.8 26.9,17.8 28,22.4 24,19.9 20,22.4 21.1,17.8 17.5,14.8 22.2,14.5" fill="#FBBF24"/>
+          <path d="M12.5 28.5C15.5 26 18.8 26 21.5 28.5C24.2 31 27.5 31 30.5 28.5C32.3 27 34 26.7 35.6 27.4C34.2 33.4 29.7 37.9 24 39.6C18.3 37.9 13.8 33.4 12.5 28.5Z" fill="#10B981"/>
+          <path d="M15 32.5C17.6 30.8 20.5 30.8 23.2 32.5C25.8 34.2 28.8 34.2 31.8 32.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <h1>Permohonan Informasi Publik — PPID Kabupaten Kutai Barat</h1>
+          <p>Pemerintah Kabupaten Kutai Barat &bull; Tanaa Purai Ngeriman</p>
+        </div>
+      </div>
+      <div class="embed-hero-actions">
+        <a href="#daftar-permohonan-section" class="btn-hero-ghost">Daftar Permohonan</a>
+        <button type="button" class="btn-hero-ghost" id="openCekStatusTop">Cek Status</button>
+      </div>
+    </div>
+
+    <!-- Form Card -->
+    <section class="surface-card" id="form-permohonan" aria-labelledby="formHeading">
+      <div class="card-header">
+        <div class="card-header-text">
+          <h2 id="formHeading">Formulir Permohonan Informasi Publik</h2>
+          <p>Silakan lengkapi formulir permohonan informasi berikut.</p>
+        </div>
+        <a href="#daftar-permohonan-section" class="btn-outline-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <span>Daftar Permohonan Informasi</span>
+        </a>
+      </div>
+
+      <div class="card-body">
+        <form id="permohonanForm" novalidate>
+          <!-- Section 1: Identitas Pemohon -->
+          <div class="form-section">
+            <div class="section-title-row">
+              <span class="section-badge">1</span>
+              <h3>Identitas Pemohon</h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field" data-field="kategori">
+                <label class="form-label" for="kategoriPermohonan">Kategori Permohonan <span class="req">*</span></label>
+                <select id="kategoriPermohonan" name="kategori" class="form-control" required>
+                  <option value="">-- Pilih Kategori Permohonan --</option>
+                  <option value="Perorangan">Perorangan</option>
+                  <option value="Mahasiswa/Pelajar">Mahasiswa/Pelajar</option>
+                  <option value="Siswa">Siswa</option>
+                  <option value="Kelompok Orang">Kelompok Orang</option>
+                  <option value="Badan Hukum / Lembaga">Badan Hukum / Lembaga</option>
+                </select>
+                <span class="field-error">Kategori permohonan wajib dipilih.</span>
+              </div>
+
+              <div class="form-field" data-field="nama">
+                <label class="form-label" for="namaPemohon">Nama Pemohon <span class="req">*</span></label>
+                <input type="text" id="namaPemohon" name="nama" class="form-control" placeholder="Masukkan nama lengkap pemohon" required />
+                <span class="field-error">Nama pemohon wajib diisi.</span>
+              </div>
+
+              <div class="form-field" data-field="jenisIdentitas">
+                <label class="form-label" for="jenisIdentitas">Jenis Identitas <span class="req">*</span></label>
+                <select id="jenisIdentitas" name="jenisIdentitas" class="form-control" required>
+                  <option value="">-- Pilih Jenis Identitas --</option>
+                  <option value="KTP">KTP</option>
+                  <option value="Kartu Mahasiswa">Kartu Mahasiswa</option>
+                  <option value="Kartu Pelajar">Kartu Pelajar</option>
+                  <option value="SIM">SIM</option>
+                  <option value="Paspor">Paspor</option>
+                  <option value="Kartu Lembaga / Akta Notaris">Kartu Lembaga / Akta Notaris</option>
+                </select>
+                <span class="field-error">Jenis identitas wajib dipilih.</span>
+              </div>
+
+              <div class="form-field" data-field="noIdentitas">
+                <label class="form-label" for="noIdentitas">No Identitas <span class="req">*</span></label>
+                <input type="text" id="noIdentitas" name="noIdentitas" class="form-control" placeholder="Masukkan nomor identitas (NIK / NIM / No. Kartu)" required />
+                <span class="field-error">Nomor identitas wajib diisi.</span>
+              </div>
+
+              <div class="form-field span-2" data-field="uploadIdentitas">
+                <label class="form-label" for="uploadIdentitas">Upload Identitas (KTP, Kartu Mahasiswa atau Kartu Lembaga) <span class="req">*</span></label>
+                <div class="upload-dropzone" id="uploadDropzone">
+                  <input type="file" id="uploadIdentitas" name="uploadIdentitas" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required />
+                  <div class="upload-icon-box" aria-hidden="true">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="upload-text-main">Seret dan lepaskan berkas di sini atau <span>pilih foto</span></div>
+                    <p class="field-hint">Foto berformat JPG atau PNG, ukuran maksimal 10 MB.</p>
+                  </div>
+                </div>
+                <div class="upload-preview" id="uploadPreview">
+                  <div class="upload-preview-left">
+                    <img id="uploadThumb" class="upload-thumb" src="" alt="Pratinjau Identitas" />
+                    <div class="upload-meta">
+                      <div class="upload-filename" id="uploadFileName"></div>
+                      <div class="upload-filesize" id="uploadFileSize"></div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-remove-file" id="removeFileBtn">Hapus</button>
+                </div>
+                <span class="field-error" id="uploadErrorMsg">Berkas identitas (JPG/PNG maks. 10 MB) wajib diunggah.</span>
+              </div>
+
+              <div class="form-field span-2" data-field="alamat">
+                <label class="form-label" for="alamatPemohon">Alamat Pemohon <span class="req">*</span></label>
+                <textarea id="alamatPemohon" name="alamat" class="form-control" rows="3" placeholder="Masukkan alamat lengkap pemohon (Kampung/Kelurahan, Kecamatan, Kabupaten)" required></textarea>
+                <span class="field-error">Alamat pemohon wajib diisi.</span>
+              </div>
+
+              <div class="form-field" data-field="pekerjaan">
+                <label class="form-label" for="pekerjaanPemohon">Pekerjaan Pemohon <span class="req">*</span></label>
+                <input type="text" id="pekerjaanPemohon" name="pekerjaan" class="form-control" placeholder="Contoh: Mahasiswa, Guru, Peneliti, Wiraswasta" required />
+                <span class="field-error">Pekerjaan pemohon wajib diisi.</span>
+              </div>
+
+              <div class="form-field" data-field="noHp">
+                <label class="form-label" for="noHpPemohon">No HP Pemohon <span class="req">*</span></label>
+                <input type="tel" id="noHpPemohon" name="noHp" class="form-control" placeholder="Contoh: 081234567890" required />
+                <span class="field-error">Nomor HP aktif pemohon wajib diisi (min. 9 digit).</span>
+              </div>
+
+              <div class="form-field span-2" data-field="email">
+                <label class="form-label" for="emailPemohon">Email Pemohon <span class="req">*</span></label>
+                <input type="email" id="emailPemohon" name="email" class="form-control" placeholder="contoh@email.com" required />
+                <span class="field-error">Alamat email yang valid wajib diisi.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Data Permohonan -->
+          <div class="form-section">
+            <div class="section-title-row">
+              <span class="section-badge">2</span>
+              <h3>Data Permohonan</h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-field span-2" data-field="instansi">
+                <label class="form-label" for="instansiTujuan">Instansi yang Dituju <span class="req">*</span></label>
+                <div class="instansi-filter-wrap">
+                  <input type="search" id="instansiSearch" class="form-control instansi-search-input" placeholder="Cari Perangkat Daerah / Badan / Dinas / Kecamatan / Kelurahan Kutai Barat..." aria-label="Cari instansi Kutai Barat" />
+                  <select id="instansiTujuan" name="instansi" class="form-control" required>
+                    <option value="">-- Pilih Instansi yang Dituju --</option>
+                  </select>
+                </div>
+                <span class="field-error">Instansi yang dituju wajib dipilih.</span>
+              </div>
+
+              <div class="form-field span-2" data-field="rincian">
+                <label class="form-label" for="rincianKebutuhan">Rincian Kebutuhan <span class="req">*</span></label>
+                <textarea id="rincianKebutuhan" name="rincian" class="form-control" rows="4" placeholder="Tuliskan rincian informasi publik yang dibutuhkan secara jelas dan spesifik..." required></textarea>
+                <span class="field-error">Rincian kebutuhan informasi wajib diisi.</span>
+              </div>
+
+              <div class="form-field span-2" data-field="tujuan">
+                <label class="form-label" for="tujuanInformasi">Tujuan Informasi <span class="req">*</span></label>
+                <textarea id="tujuanInformasi" name="tujuan" class="form-control" rows="3" placeholder="Jelaskan tujuan penggunaan informasi publik yang dimohon..." required></textarea>
+                <span class="field-error">Tujuan penggunaan informasi wajib diisi.</span>
+              </div>
+
+              <div class="form-field" data-field="caraMemperoleh">
+                <label class="form-label" for="caraMemperoleh">Cara Memperoleh Informasi <span class="req">*</span></label>
+                <select id="caraMemperoleh" name="caraMemperoleh" class="form-control" required>
+                  <option value="">-- Pilih Cara Memperoleh Informasi --</option>
+                  <option value="Melihat/membaca/mendengarkan/mencatat">Melihat/membaca/mendengarkan/mencatat</option>
+                  <option value="Mendapat salinan hard copy/soft copy">Mendapat salinan hard copy/soft copy</option>
+                </select>
+                <span class="field-error">Cara memperoleh informasi wajib dipilih.</span>
+              </div>
+
+              <div class="form-field" data-field="caraMendapatkan">
+                <label class="form-label" for="caraMendapatkan">Cara Mendapatkan Informasi <span class="req">*</span></label>
+                <select id="caraMendapatkan" name="caraMendapatkan" class="form-control" required>
+                  <option value="">-- Pilih Cara Mendapatkan Informasi --</option>
+                  <option value="Mengambil Langsung">Mengambil Langsung</option>
+                  <option value="Email">Email</option>
+                  <option value="Whatsapp">Whatsapp</option>
+                  <option value="Jasa Expedisi">Jasa Expedisi</option>
+                  <option value="Kurir">Kurir</option>
+                  <option value="Pos">Pos</option>
+                  <option value="Faksimili">Faksimili</option>
+                </select>
+                <span class="field-error">Cara mendapatkan informasi wajib dipilih.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide To Verify + Submit -->
+          <div class="verify-block">
+            <div class="form-field" data-field="verify">
+              <label class="form-label" id="dragVerifyTitle">Drag To Verify <span class="req">*</span></label>
+              <div class="slide-verify-wrapper">
+                <div class="slide-verify-track" id="slideVerifyTrack" role="group" aria-labelledby="dragVerifyTitle">
+                  <div class="slide-verify-fill" id="slideVerifyFill"></div>
+                  <div class="slide-verify-label" id="slideVerifyLabel">Slide To Verify</div>
+                  <button type="button" class="slide-verify-knob" id="slideVerifyKnob" aria-label="Geser ke kanan untuk verifikasi">
+                    <svg id="slideVerifyIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="13 17 18 12 13 7"></polyline>
+                      <polyline points="6 17 11 12 6 7"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <span class="field-error">Silakan geser tombol "Slide To Verify" ke kanan untuk verifikasi.</span>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" id="resetFormBtn">Kosongkan</button>
+              <button type="submit" class="btn btn-primary" id="submitFormBtn">
+                <span id="submitBtnText">Kirim Permohonan</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Daftar Permohonan Informasi -->
+    <section class="surface-card" id="daftar-permohonan-section" aria-labelledby="daftarHeading">
+      <div class="card-header">
+        <div class="card-header-text">
+          <h2 id="daftarHeading">Daftar Permohonan Informasi</h2>
+          <p>Transparansi daftar permohonan informasi publik PPID Kabupaten Kutai Barat.</p>
+        </div>
+        <button type="button" class="btn-outline-list" id="openCekStatusFromTable">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Cek Status Permohonan</span>
+        </button>
+      </div>
+
+      <div class="dx-toolbar">
+        <div class="dx-group-panel" id="dxGroupPanel" aria-label="Area pengelompokan kolom">
+          <span id="dxGroupPlaceholder">Drag header column to grouping</span>
+        </div>
+
+        <div class="dx-tools-right">
+          <input type="search" id="dxSearchInput" class="dx-search-input" placeholder="Cari permohonan..." aria-label="Cari daftar permohonan" />
+          <button type="button" class="dx-icon-btn" id="columnChooserBtn" aria-expanded="false" aria-controls="columnChooserPopover">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="18" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="18" rx="1"></rect>
+            </svg>
+            <span>Column Chooser</span>
+          </button>
+          <button type="button" class="dx-icon-btn" id="dxRefreshBtn" title="Muat ulang data">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+          </button>
+          <div class="column-chooser-popover" id="columnChooserPopover">
+            <div class="column-chooser-title">Column Chooser</div>
+            <div id="columnChooserList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dx-table-wrap">
+        <div class="dx-loading-overlay" id="dxLoadingOverlay">
+          <div class="dx-loading-pill">
+            <span class="spinner"></span>
+            <span>Loading...</span>
+          </div>
+        </div>
+        <table class="dx-table" id="permohonanTable">
+          <thead id="permohonanThead"></thead>
+          <tbody id="permohonanTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="dx-pager">
+        <div class="dx-page-sizes" role="group" aria-label="Jumlah baris per halaman">
+          <button type="button" class="dx-size-btn active" data-size="5">5</button>
+          <button type="button" class="dx-size-btn" data-size="10">10</button>
+          <button type="button" class="dx-size-btn" data-size="15">15</button>
+          <button type="button" class="dx-size-btn" data-size="30">30</button>
+        </div>
+        <div class="dx-pages-right">
+          <span class="dx-page-info" id="dxPageInfo"></span>
+          <div class="dx-page-nums" id="dxPageNums"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Sekretariat Ringkas PPID Kutai Barat -->
+    <div class="kubar-info-bar">
+      <div><strong>Sekretariat PPID Kabupaten Kutai Barat:</strong> Jalan Sendawar 1, Komplek Perkantoran Kabupaten Kutai Barat, Kec. Barong Tongkok</div>
+      <div><strong>Email:</strong> ppid.kutaibarat01@gmail.com</div>
+    </div>
+  </div>
+
+  <!-- Detail / Bukti Pengajuan Modal -->
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 id="detailModalTitle">Detail Permohonan Informasi</h3>
+        <button type="button" class="modal-close" data-close-modal="detailModal" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="modal-body" id="detailModalBody"></div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-primary" data-close-modal="detailModal">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cek Status Modal -->
+  <div class="modal-backdrop" id="cekStatusModal" role="dialog" aria-modal="true" aria-labelledby="cekStatusTitle">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 id="cekStatusTitle">Cek Status Permohonan</h3>
+        <button type="button" class="modal-close" data-close-modal="cekStatusModal" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-top:0;color:var(--slate-600);font-size:0.86rem;">Masukkan Kode Permohonan untuk mengetahui status permohonan Anda (contoh: <strong>PMKB2501</strong> atau <strong>PMKB2502</strong>).</p>
+        <form id="cekStatusForm" style="display:flex;gap:10px;margin-bottom:14px;">
+          <input type="text" id="cekStatusInput" class="form-control" placeholder="Masukkan kode permohonan..." required style="text-transform:uppercase;" />
+          <button type="submit" class="btn btn-primary" style="flex-shrink:0;">Cek</button>
+        </form>
+        <div id="cekStatusResult"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ======================================================================
+         KONFIGURASI BACKEND OPSIONAL (Google Apps Script / API Server Kubar)
+         Isi WEBHOOK_URL dengan URL Web App Google Apps Script jika ingin data
+         kiriman otomatis masuk ke Google Sheets & Google Drive PPID Kubar.
+         Jika dikosongkan (""), data tersimpan lokal di browser untuk uji coba.
+         ====================================================================== */
+      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyMyGP0r6l6Ea1YZLa_gchpcP-LRbuPGonOAVY7s6EN-ku4WuGeIFndJhyzPcaJ02Q/exec";
+
+      /* Daftar Lengkap 53 Instansi Resmi Pemerintah Kabupaten Kutai Barat */
+      const INSTANSI_KUBAR = [
+        // PPID Utama, Sekretariat & Pengawasan
+        { name: "PPID UTAMA KABUPATEN KUTAI BARAT (DISKOMINFO)", category: "PPID Utama & Sekretariat" },
+        { name: "SEKRETARIAT DAERAH KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
+        { name: "SEKRETARIAT DPRD KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
+        { name: "INSPEKTORAT DAERAH KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
+
+        // Badan (6)
+        { name: "BADAN PERENCANAAN PEMBANGUNAN DAERAH, PENELITIAN DAN PENGEMBANGAN (BAPPEDALITBANG)", category: "Badan" },
+        { name: "BADAN KEUANGAN DAN ASET DAERAH (BKAD)", category: "Badan" },
+        { name: "BADAN PENDAPATAN DAERAH (BAPENDA)", category: "Badan" },
+        { name: "BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA (BKPSDM)", category: "Badan" },
+        { name: "BADAN KESATUAN BANGSA DAN POLITIK (KESBANGPOL)", category: "Badan" },
+        { name: "BADAN PENANGGULANGAN BENCANA DAERAH (BPBD)", category: "Badan" },
+
+        // Dinas (19)
+        { name: "DINAS PENDIDIKAN DAN KEBUDAYAAN", category: "Dinas" },
+        { name: "DINAS KESEHATAN", category: "Dinas" },
+        { name: "DINAS PEKERJAAN UMUM DAN PENATAAN RUANG (PUPR)", category: "Dinas" },
+        { name: "DINAS SOSIAL", category: "Dinas" },
+        { name: "DINAS TENAGA KERJA DAN TRANSMIGRASI", category: "Dinas" },
+        { name: "DINAS KETAHANAN PANGAN", category: "Dinas" },
+        { name: "DINAS LINGKUNGAN HIDUP", category: "Dinas" },
+        { name: "DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL (DISDUKCAPIL)", category: "Dinas" },
+        { name: "DINAS PEMBERDAYAAN MASYARAKAT DAN KAMPUNG (DPMK)", category: "Dinas" },
+        { name: "DINAS PENGENDALIAN PENDUDUK, KB, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK", category: "Dinas" },
+        { name: "DINAS PERHUBUNGAN", category: "Dinas" },
+        { name: "DINAS KOMUNIKASI DAN INFORMATIKA (DISKOMINFO)", category: "Dinas" },
+        { name: "DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU (DPMPTSP)", category: "Dinas" },
+        { name: "DINAS PEMUDA DAN OLAHRAGA (DISPORA)", category: "Dinas" },
+        { name: "DINAS KEARSIPAN DAN PERPUSTAKAAN", category: "Dinas" },
+        { name: "DINAS PARIWISATA", category: "Dinas" },
+        { name: "DINAS PERTANIAN", category: "Dinas" },
+        { name: "DINAS PERIKANAN", category: "Dinas" },
+        { name: "DINAS PERDAGANGAN, KOPERASI, UKM DAN PERINDUSTRIAN", category: "Dinas" },
+
+        // Satpol PP, RSUD & BUMD
+        { name: "SATUAN POLISI PAMONG PRAJA (SATPOL PP)", category: "RSUD, Satpol PP & BUMD" },
+        { name: "RSUD HARAPAN INSAN SENDAWAR", category: "RSUD, Satpol PP & BUMD" },
+        { name: "RSUD MANGKU JAYA LINGGANG", category: "RSUD, Satpol PP & BUMD" },
+        { name: "PERUMDAM TIRTA SENDAWAR", category: "RSUD, Satpol PP & BUMD" },
+
+        // 16 Kecamatan Kabupaten Kutai Barat
+        { name: "KECAMATAN BARONG TONGKOK", category: "Kecamatan" },
+        { name: "KECAMATAN BENTIAN BESAR", category: "Kecamatan" },
+        { name: "KECAMATAN BONGAN", category: "Kecamatan" },
+        { name: "KECAMATAN DAMAI", category: "Kecamatan" },
+        { name: "KECAMATAN JEMPANG", category: "Kecamatan" },
+        { name: "KECAMATAN LINGGANG BIGUNG", category: "Kecamatan" },
+        { name: "KECAMATAN LONG IRAM", category: "Kecamatan" },
+        { name: "KECAMATAN MELAK", category: "Kecamatan" },
+        { name: "KECAMATAN MOOK MANAAR BULATN", category: "Kecamatan" },
+        { name: "KECAMATAN MUARA LAWA", category: "Kecamatan" },
+        { name: "KECAMATAN MUARA PAHU", category: "Kecamatan" },
+        { name: "KECAMATAN NYUATAN", category: "Kecamatan" },
+        { name: "KECAMATAN PENYINGGAHAN", category: "Kecamatan" },
+        { name: "KECAMATAN SEKOLAQ DARAT", category: "Kecamatan" },
+        { name: "KECAMATAN SILUQ NGURAI", category: "Kecamatan" },
+        { name: "KECAMATAN TERING", category: "Kecamatan" },
+
+        // 4 Kelurahan Kabupaten Kutai Barat
+        { name: "KELURAHAN BARONG TONGKOK", category: "Kelurahan" },
+        { name: "KELURAHAN SIMPANG RAYA", category: "Kelurahan" },
+        { name: "KELURAHAN MELAK ILIR", category: "Kelurahan" },
+        { name: "KELURAHAN MELAK ULU", category: "Kelurahan" }
+      ];
+
+      const INITIAL_REQUESTS = [
+        { kode: "PMKB2501", tanggal: "18 November 2026", kategori: "Mahasiswa/Pelajar", nama: "Yohanes Pratama", pekerjaan: "Mahasiswa", instansi: "DINAS PEMBERDAYAAN MASYARAKAT DAN KAMPUNG (DPMK)", rincian: "Data rekapitulasi dana kampung dan jumlah kampung pada 16 kecamatan Kabupaten Kutai Barat", tujuan: "Sebagai bahan penyusunan penelitian skripsi", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Dikirim" },
+        { kode: "PMKB2502", tanggal: "15 November 2026", kategori: "Perorangan", nama: "Maria Magdalena", pekerjaan: "Wiraswasta", instansi: "DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU (DPMPTSP)", rincian: "Standar pelayanan dan persyaratan perizinan berusaha sektor perdagangan di Sendawar", tujuan: "Untuk kelengkapan pengurusan izin usaha", caraMemperoleh: "Melihat/membaca/mendengarkan/mencatat", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2503", tanggal: "11 November 2026", kategori: "Perorangan", nama: "Dedy Kurniawan", pekerjaan: "Guru", instansi: "DINAS PENDIDIKAN DAN KEBUDAYAAN", rincian: "Informasi kalender pendidikan dan rekap sebaran satuan pendidikan di Kecamatan Barong Tongkok", tujuan: "Untuk bahan edukasi dan penyusunan program belajar", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2504", tanggal: "08 November 2026", kategori: "Badan Hukum / Lembaga", nama: "Kelompok Tani Harapan Sendawar", pekerjaan: "Pengurus Kelompok Tani", instansi: "DINAS PERTANIAN", rincian: "Informasi program bantuan bibit dan sarana prasarana pertanian Kabupaten Kutai Barat", tujuan: "Sebagai acuan pengajuan usulan kelompok tani kampung", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Mengambil Langsung", status: "Permohonan Informasi Diproses" },
+        { kode: "PMKB2505", tanggal: "04 November 2026", kategori: "Perorangan", nama: "Rina Lestari", pekerjaan: "Peneliti", instansi: "DINAS PEKERJAAN UMUM DAN PENATAAN RUANG (PUPR)", rincian: "Data panjang jalan kabupaten menurut kondisi permukaan di Kecamatan Melak dan Sekolaq Darat", tujuan: "Sebagai data dukung kajian pembangunan wilayah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2506", tanggal: "01 November 2026", kategori: "Perorangan", nama: "Budi Santoso", pekerjaan: "Karyawan Swasta", instansi: "BADAN KEUANGAN DAN ASET DAERAH (BKAD)", rincian: "Ringkasan Laporan Realisasi APBD Kabupaten Kutai Barat Tahun Anggaran berjalan", tujuan: "Untuk keterbukaan dan informasi publik masyarakat", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2507", tanggal: "28 October 2026", kategori: "Mahasiswa/Pelajar", nama: "Sari Wulandari", pekerjaan: "Mahasiswa", instansi: "DINAS PARIWISATA", rincian: "Data jumlah kunjungan wisata dan daftar objek wisata budaya di Kecamatan Jempang dan Damai", tujuan: "Untuk bahan tugas akhir pariwisata daerah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Diproses" }
+      ];
+
+      const STORAGE_KEY = "ppid_kubar_permohonan_v1";
+      function loadRequests() {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            const parsed = JSON.parse(saved);
+            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+          }
+        } catch (_) {}
+        return INITIAL_REQUESTS.slice();
+      }
+      function saveRequests(list) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch (_) {}
+      }
+
+      let requestsData = loadRequests();
+      let uploadedFileDataUrl = "";
+      let uploadedFileNameVal = "";
+
+      function escapeHtml(str) {
+        return String(str ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+      }
+
+      function showToast(message, type) {
+        const stack = document.getElementById("toastStack");
+        if (!stack) return;
+        const toast = document.createElement("div");
+        toast.className = "toast" + (type ? " toast-" + type : "");
+        toast.textContent = message;
+        stack.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transition = "opacity 0.2s ease";
+          setTimeout(() => toast.remove(), 220);
+        }, 3400);
+      }
+
+      /* Modals */
+      function openModal(id) {
+        document.getElementById(id)?.classList.add("open");
+      }
+      function closeModal(id) {
+        document.getElementById(id)?.classList.remove("open");
+      }
+      document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+        btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
+      });
+      document.querySelectorAll(".modal-backdrop").forEach((b) => {
+        b.addEventListener("click", (e) => { if (e.target === b) closeModal(b.id); });
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") document.querySelectorAll(".modal-backdrop.open").forEach((m) => closeModal(m.id));
+      });
+      [document.getElementById("openCekStatusTop"), document.getElementById("openCekStatusFromTable")].forEach((btn) => {
+        btn?.addEventListener("click", () => {
+          openModal("cekStatusModal");
+          setTimeout(() => document.getElementById("cekStatusInput")?.focus(), 80);
+        });
+      });
+
+      /* Populate & Filter Instansi Kubar */
+      const instansiSelect = document.getElementById("instansiTujuan");
+      const instansiSearch = document.getElementById("instansiSearch");
+      function populateInstansiOptions(filterText) {
+        const prev = instansiSelect.value;
+        const q = (filterText || "").toLowerCase().trim();
+        const groups = ["PPID Utama & Sekretariat", "Badan", "Dinas", "RSUD, Satpol PP & BUMD", "Kecamatan", "Kelurahan"];
+        instansiSelect.innerHTML = '<option value="">-- Pilih Instansi yang Dituju --</option>';
+        groups.forEach((cat) => {
+          const items = INSTANSI_KUBAR.filter((p) => p.category === cat && (!q || p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)));
+          if (!items.length) return;
+          const og = document.createElement("optgroup");
+          og.label = cat;
+          items.forEach((item) => {
+            const opt = document.createElement("option");
+            opt.value = item.name;
+            opt.textContent = item.name;
+            if (item.name === prev) opt.selected = true;
+            og.appendChild(opt);
+          });
+          instansiSelect.appendChild(og);
+        });
+      }
+      populateInstansiOptions("");
+      instansiSearch?.addEventListener("input", (e) => populateInstansiOptions(e.target.value));
+
+      /* Upload Identitas */
+      const uploadInput = document.getElementById("uploadIdentitas");
+      const uploadDropzone = document.getElementById("uploadDropzone");
+      const uploadPreview = document.getElementById("uploadPreview");
+      const uploadThumb = document.getElementById("uploadThumb");
+      const uploadFileName = document.getElementById("uploadFileName");
+      const uploadFileSize = document.getElementById("uploadFileSize");
+      const removeFileBtn = document.getElementById("removeFileBtn");
+      const uploadErrorMsg = document.getElementById("uploadErrorMsg");
+      const uploadFieldEl = document.querySelector('[data-field="uploadIdentitas"]');
+      let uploadedFileValid = false;
+
+      function formatBytes(bytes) {
+        if (bytes < 1024) return bytes + " B";
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+        return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+      }
+      function clearUploadedFile() {
+        uploadInput.value = "";
+        uploadedFileValid = false;
+        uploadedFileDataUrl = "";
+        uploadedFileNameVal = "";
+        uploadPreview.classList.remove("active");
+        uploadDropzone.style.display = "flex";
+        uploadThumb.src = "";
+      }
+      function handleSelectedFile(file) {
+        if (!file) { clearUploadedFile(); return; }
+        const validTypes = ["image/jpeg", "image/png"];
+        if (!validTypes.includes(file.type) && !/\.(jpe?g|png)$/i.test(file.name)) {
+          clearUploadedFile();
+          uploadErrorMsg.textContent = "Format berkas tidak didukung. Gunakan foto JPG atau PNG.";
+          uploadFieldEl.classList.add("has-error");
+          return;
+        }
+        if (file.size > 10 * 1024 * 1024) {
+          clearUploadedFile();
+          uploadErrorMsg.textContent = "Ukuran berkas melebihi batas maksimal 10 MB.";
+          uploadFieldEl.classList.add("has-error");
+          return;
+        }
+        uploadedFileValid = true;
+        uploadedFileNameVal = file.name;
+        uploadFieldEl.classList.remove("has-error");
+        uploadFileName.textContent = file.name;
+        uploadFileSize.textContent = formatBytes(file.size) + " • Siap diunggah";
+        uploadDropzone.style.display = "none";
+        uploadPreview.classList.add("active");
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          uploadedFileDataUrl = ev.target.result;
+          uploadThumb.src = uploadedFileDataUrl;
+        };
+        reader.readAsDataURL(file);
+      }
+      uploadInput?.addEventListener("change", (e) => handleSelectedFile(e.target.files[0]));
+      ["dragenter", "dragover"].forEach((evt) => uploadDropzone?.addEventListener(evt, (e) => { e.preventDefault(); uploadDropzone.classList.add("drag-over"); }));
+      ["dragleave", "drop"].forEach((evt) => uploadDropzone?.addEventListener(evt, (e) => { e.preventDefault(); uploadDropzone.classList.remove("drag-over"); }));
+      uploadDropzone?.addEventListener("drop", (e) => { if (e.dataTransfer?.files?.[0]) handleSelectedFile(e.dataTransfer.files[0]); });
+      removeFileBtn?.addEventListener("click", clearUploadedFile);
+
+      /* Slide To Verify */
+      const verifyTrack = document.getElementById("slideVerifyTrack");
+      const verifyFill = document.getElementById("slideVerifyFill");
+      const verifyKnob = document.getElementById("slideVerifyKnob");
+      const verifyLabel = document.getElementById("slideVerifyLabel");
+      const verifyIcon = document.getElementById("slideVerifyIcon");
+      const verifyFieldEl = document.querySelector('[data-field="verify"]');
+      let isVerified = false, isDragging = false, startClientX = 0, currentOffset = 0;
+
+      function getMaxSlide() { return Math.max(1, verifyTrack.clientWidth - verifyKnob.offsetWidth - 4); }
+      function updateSliderPosition(px) {
+        currentOffset = Math.max(0, Math.min(px, getMaxSlide()));
+        verifyKnob.style.transform = `translateX(${currentOffset}px)`;
+        verifyFill.style.width = `${currentOffset + verifyKnob.offsetWidth / 2}px`;
+      }
+      function completeVerification() {
+        isVerified = true; isDragging = false;
+        verifyKnob.style.transition = "transform 0.18s ease";
+        verifyFill.style.transition = "width 0.18s ease";
+        verifyKnob.style.transform = `translateX(${getMaxSlide()}px)`;
+        verifyFill.style.width = "100%";
+        verifyTrack.classList.add("verified");
+        verifyLabel.textContent = "Verified";
+        verifyIcon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+        verifyFieldEl.classList.remove("has-error");
+      }
+      function resetVerification() {
+        isVerified = false; isDragging = false; currentOffset = 0;
+        verifyKnob.style.transition = "transform 0.22s ease";
+        verifyFill.style.transition = "width 0.22s ease";
+        verifyKnob.style.transform = "translateX(0px)";
+        verifyFill.style.width = "0px";
+        verifyTrack.classList.remove("verified");
+        verifyLabel.textContent = "Slide To Verify";
+        verifyIcon.innerHTML = '<polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline>';
+      }
+      function startDrag(x) { if (isVerified) return; isDragging = true; startClientX = x - currentOffset; verifyKnob.style.transition = "none"; verifyFill.style.transition = "none"; }
+      function moveDrag(x) { if (!isDragging || isVerified) return; updateSliderPosition(x - startClientX); if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); }
+      function endDrag() { if (!isDragging || isVerified) return; isDragging = false; if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); else resetVerification(); }
+      verifyKnob.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
+      window.addEventListener("mousemove", (e) => moveDrag(e.clientX));
+      window.addEventListener("mouseup", endDrag);
+      verifyKnob.addEventListener("touchstart", (e) => { if (e.touches[0]) startDrag(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener("touchmove", (e) => { if (isDragging && e.touches[0]) moveDrag(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener("touchend", endDrag);
+      verifyKnob.addEventListener("keydown", (e) => { if (!isVerified && (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); completeVerification(); } });
+      window.addEventListener("resize", () => { if (isVerified) verifyKnob.style.transform = `translateX(${getMaxSlide()}px)`; });
+
+      /* Form Validation & Submit */
+      const permohonanForm = document.getElementById("permohonanForm");
+      const resetFormBtn = document.getElementById("resetFormBtn");
+      const submitFormBtn = document.getElementById("submitFormBtn");
+      const submitBtnText = document.getElementById("submitBtnText");
+
+      function generateKodePermohonan() {
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        let code = "PMKB";
+        for (let i = 0; i < 4; i++) code += chars[Math.floor(Math.random() * chars.length)];
+        return code;
+      }
+      function formatTodayDate() {
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const now = new Date();
+        return `${String(now.getDate()).padStart(2, "0")} ${months[now.getMonth()]} ${now.getFullYear()}`;
+      }
+      function clearAllErrors() {
+        permohonanForm.querySelectorAll(".form-field.has-error").forEach((el) => el.classList.remove("has-error"));
+      }
+      permohonanForm.querySelectorAll(".form-control").forEach((ctrl) => {
+        ctrl.addEventListener("input", () => ctrl.closest(".form-field")?.classList.remove("has-error"));
+        ctrl.addEventListener("change", () => ctrl.closest(".form-field")?.classList.remove("has-error"));
+      });
+      resetFormBtn?.addEventListener("click", () => {
+        permohonanForm.reset();
+        instansiSearch.value = "";
+        populateInstansiOptions("");
+        clearUploadedFile();
+        resetVerification();
+        clearAllErrors();
+        showToast("Formulir telah dikosongkan.");
+      });
+
+      function validateForm() {
+        clearAllErrors();
+        let firstInvalid = null;
+        const checks = [
+          { field: "kategori", valid: Boolean(document.getElementById("kategoriPermohonan").value.trim()) },
+          { field: "nama", valid: document.getElementById("namaPemohon").value.trim().length >= 2 },
+          { field: "jenisIdentitas", valid: Boolean(document.getElementById("jenisIdentitas").value.trim()) },
+          { field: "noIdentitas", valid: document.getElementById("noIdentitas").value.trim().length >= 5 },
+          { field: "uploadIdentitas", valid: uploadedFileValid },
+          { field: "alamat", valid: document.getElementById("alamatPemohon").value.trim().length >= 5 },
+          { field: "pekerjaan", valid: document.getElementById("pekerjaanPemohon").value.trim().length >= 2 },
+          { field: "noHp", valid: /^[0-9+\-\s]{9,18}$/.test(document.getElementById("noHpPemohon").value.trim()) },
+          { field: "email", valid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById("emailPemohon").value.trim()) },
+          { field: "instansi", valid: Boolean(document.getElementById("instansiTujuan").value.trim()) },
+          { field: "rincian", valid: document.getElementById("rincianKebutuhan").value.trim().length >= 5 },
+          { field: "tujuan", valid: document.getElementById("tujuanInformasi").value.trim().length >= 5 },
+          { field: "caraMemperoleh", valid: Boolean(document.getElementById("caraMemperoleh").value.trim()) },
+          { field: "caraMendapatkan", valid: Boolean(document.getElementById("caraMendapatkan").value.trim()) },
+          { field: "verify", valid: isVerified }
+        ];
+        checks.forEach((c) => {
+          if (!c.valid) {
+            const el = permohonanForm.querySelector(`[data-field="${c.field}"]`);
+            if (el) { el.classList.add("has-error"); if (!firstInvalid) firstInvalid = el; }
+          }
+        });
+        if (firstInvalid) {
+          firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+          showToast("Mohon lengkapi seluruh kolom wajib dan verifikasi terlebih dahulu.", "error");
+          return false;
+        }
+        return true;
+      }
+
+      permohonanForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        submitFormBtn.disabled = true;
+        submitBtnText.innerHTML = '<span class="spinner" style="display:inline-block;vertical-align:-3px;margin-right:8px;"></span>Proses...';
+
+        const newItem = {
+          kode: generateKodePermohonan(),
+          tanggal: formatTodayDate(),
+          kategori: document.getElementById("kategoriPermohonan").value,
+          nama: document.getElementById("namaPemohon").value.trim(),
+          jenisIdentitas: document.getElementById("jenisIdentitas").value,
+          noIdentitas: document.getElementById("noIdentitas").value.trim(),
+          alamat: document.getElementById("alamatPemohon").value.trim(),
+          pekerjaan: document.getElementById("pekerjaanPemohon").value.trim(),
+          noHp: document.getElementById("noHpPemohon").value.trim(),
+          email: document.getElementById("emailPemohon").value.trim(),
+          instansi: document.getElementById("instansiTujuan").value,
+          rincian: document.getElementById("rincianKebutuhan").value.trim(),
+          tujuan: document.getElementById("tujuanInformasi").value.trim(),
+          caraMemperoleh: document.getElementById("caraMemperoleh").value,
+          caraMendapatkan: document.getElementById("caraMendapatkan").value,
+          status: "Permohonan Informasi Dikirim",
+          fileIdentitasNama: uploadedFileNameVal,
+          fileIdentitasBase64: uploadedFileDataUrl
+        };
+
+        try {
+          if (WEBHOOK_URL) {
+            const resp = await fetch(WEBHOOK_URL, {
+              method: "POST",
+              headers: { "Content-Type": "text/plain;charset=utf-8" },
+              body: JSON.stringify(newItem)
+            });
+            const resJson = await resp.json().catch(() => ({ ok: true }));
+            if (resJson && resJson.ok === false) {
+              throw new Error(resJson.error || "Gagal menyimpan ke Google Sheets");
+            }
+          } else {
+            await new Promise((r) => setTimeout(r, 750));
+          }
+
+          const publicRecord = {
+            kode: newItem.kode,
+            tanggal: newItem.tanggal,
+            kategori: newItem.kategori,
+            nama: newItem.nama,
+            pekerjaan: newItem.pekerjaan,
+            instansi: newItem.instansi,
+            rincian: newItem.rincian,
+            tujuan: newItem.tujuan,
+            caraMemperoleh: newItem.caraMemperoleh,
+            caraMendapatkan: newItem.caraMendapatkan,
+            status: newItem.status
+          };
+
+          requestsData.unshift(publicRecord);
+          saveRequests(requestsData);
+          gridState.page = 1;
+          renderGrid();
+
+          permohonanForm.reset();
+          instansiSearch.value = "";
+          populateInstansiOptions("");
+          clearUploadedFile();
+          resetVerification();
+          showToast("Permohonan berhasil dikirim! Kode: " + newItem.kode, "success");
+          showRequestDetailModal(publicRecord, true);
+        } catch (err) {
+          showToast("Gagal mengirim permohonan ke server. Coba lagi.", "error");
+        } finally {
+          submitFormBtn.disabled = false;
+          submitBtnText.textContent = "Kirim Permohonan";
+        }
+      });
+
+      /* Detail & Cek Status */
+      function statusBadgeClass(status) {
+        if (/selesai/i.test(status)) return "status-selesai";
+        if (/proses/i.test(status)) return "status-diproses";
+        return "status-dikirim";
+      }
+      function renderDetailHtml(item, isReceipt) {
+        const receiptHtml = isReceipt
+          ? `<div class="receipt-box">
+              <div style="font-weight:700;color:var(--teal-600);font-size:0.93rem;">Permohonan Informasi Berhasil Dikirim</div>
+              <div style="font-size:0.81rem;color:var(--slate-700);margin-top:3px;">Simpan kode permohonan berikut untuk memantau status layanan PPID Kutai Barat:</div>
+              <div class="receipt-code-row">
+                <span class="receipt-code">${escapeHtml(item.kode)}</span>
+                <button type="button" class="btn-detail-row" id="copyCodeBtn">Salin Kode</button>
+              </div>
+            </div>` : "";
+        return `
+          ${receiptHtml}
+          <div class="detail-section-title">Status Permohonan</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 13px;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:8px;margin-bottom:12px;">
+            <span class="code-badge">${escapeHtml(item.kode)}</span>
+            <span class="status-badge ${statusBadgeClass(item.status)}">${escapeHtml(item.status)}</span>
+          </div>
+          <div class="detail-section-title">Identitas Pemohon</div>
+          <table class="detail-kv-table">
+            <tr><th>Tanggal Permohonan</th><td>${escapeHtml(item.tanggal)}</td></tr>
+            <tr><th>Kategori Permohonan</th><td>${escapeHtml(item.kategori)}</td></tr>
+            <tr><th>Nama Pemohon</th><td>${escapeHtml(item.nama)}</td></tr>
+            <tr><th>Pekerjaan Pemohon</th><td>${escapeHtml(item.pekerjaan)}</td></tr>
+          </table>
+          <div class="detail-section-title">Data Permohonan</div>
+          <table class="detail-kv-table">
+            <tr><th>Instansi yang Dituju</th><td>${escapeHtml(item.instansi)}</td></tr>
+            <tr><th>Rincian Kebutuhan</th><td>${escapeHtml(item.rincian)}</td></tr>
+            <tr><th>Tujuan Informasi</th><td>${escapeHtml(item.tujuan)}</td></tr>
+            <tr><th>Cara Memperoleh Informasi</th><td>${escapeHtml(item.caraMemperoleh)}</td></tr>
+            <tr><th>Cara Mendapatkan Informasi</th><td>${escapeHtml(item.caraMendapatkan)}</td></tr>
+          </table>`;
+      }
+      function showRequestDetailModal(item, isReceipt) {
+        document.getElementById("detailModalTitle").textContent = isReceipt ? "Bukti Pengajuan Permohonan Informasi" : "Detail Permohonan Informasi";
+        document.getElementById("detailModalBody").innerHTML = renderDetailHtml(item, isReceipt);
+        document.getElementById("copyCodeBtn")?.addEventListener("click", () => {
+          navigator.clipboard?.writeText(item.kode).catch(() => {});
+          showToast("Kode permohonan " + item.kode + " disalin.", "success");
+        });
+        openModal("detailModal");
+      }
+      document.getElementById("cekStatusForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const code = document.getElementById("cekStatusInput").value.trim().toUpperCase();
+        const resultEl = document.getElementById("cekStatusResult");
+        const found = requestsData.find((r) => r.kode.toUpperCase() === code);
+        if (!found) {
+          resultEl.innerHTML = `<div style="padding:13px;border-radius:8px;background:var(--red-100);color:var(--red-600);font-size:0.85rem;font-weight:600;">Kode permohonan "${escapeHtml(code)}" tidak ditemukan.</div>`;
+          return;
+        }
+        resultEl.innerHTML = renderDetailHtml(found, false);
+      });
+
+      /* DataGrid */
+      const COLUMNS = [
+        { key: "no", label: "#", sortable: false, groupable: false, visible: true },
+        { key: "kode", label: "Kode", sortable: true, groupable: false, visible: true },
+        { key: "tanggal", label: "Tanggal", sortable: true, groupable: false, visible: true },
+        { key: "kategori", label: "Kategori", sortable: true, groupable: true, visible: true },
+        { key: "nama", label: "Nama Pemohon", sortable: true, groupable: false, visible: true },
+        { key: "instansi", label: "Instansi yang Dituju", sortable: true, groupable: true, visible: true },
+        { key: "rincian", label: "Rincian Kebutuhan", sortable: false, groupable: false, visible: true },
+        { key: "status", label: "Status", sortable: true, groupable: true, visible: true },
+        { key: "aksi", label: "Aksi", sortable: false, groupable: false, visible: true }
+      ];
+      const gridState = { search: "", sortKey: null, sortDir: "asc", groupBy: null, page: 1, pageSize: 5 };
+      const theadEl = document.getElementById("permohonanThead");
+      const tbodyEl = document.getElementById("permohonanTbody");
+      const groupPanelEl = document.getElementById("dxGroupPanel");
+      const pageInfoEl = document.getElementById("dxPageInfo");
+      const pageNumsEl = document.getElementById("dxPageNums");
+      const loadingOverlayEl = document.getElementById("dxLoadingOverlay");
+
+      function renderColumnChooser() {
+        const listEl = document.getElementById("columnChooserList");
+        listEl.innerHTML = COLUMNS.filter((c) => c.key !== "no" && c.key !== "aksi")
+          .map((c) => `<label class="column-chooser-item"><input type="checkbox" data-col-toggle="${c.key}" ${c.visible ? "checked" : ""} /><span>${escapeHtml(c.label)}</span></label>`).join("");
+        listEl.querySelectorAll("input[data-col-toggle]").forEach((cb) => {
+          cb.addEventListener("change", () => {
+            const col = COLUMNS.find((x) => x.key === cb.getAttribute("data-col-toggle"));
+            if (col) col.visible = cb.checked;
+            renderGrid();
+          });
+        });
+      }
+      function renderGroupPanel() {
+        if (!gridState.groupBy) {
+          groupPanelEl.innerHTML = '<span id="dxGroupPlaceholder">Drag header column to grouping</span>';
+          return;
+        }
+        const col = COLUMNS.find((c) => c.key === gridState.groupBy);
+        groupPanelEl.innerHTML = `<span style="font-size:0.77rem;color:var(--slate-500);">Dikelompokkan berdasarkan:</span><span class="group-chip"><span>${escapeHtml(col ? col.label : gridState.groupBy)}</span><button type="button" id="clearGroupBtn">&times;</button></span>`;
+        document.getElementById("clearGroupBtn")?.addEventListener("click", () => { gridState.groupBy = null; renderGrid(); });
+      }
+      function getFilteredAndSortedData() {
+        const q = gridState.search.toLowerCase().trim();
+        let list = requestsData.filter((item) => !q || item.kode.toLowerCase().includes(q) || item.nama.toLowerCase().includes(q) || item.kategori.toLowerCase().includes(q) || item.instansi.toLowerCase().includes(q) || item.rincian.toLowerCase().includes(q) || item.status.toLowerCase().includes(q) || item.tanggal.toLowerCase().includes(q));
+        if (gridState.sortKey) {
+          const key = gridState.sortKey, mult = gridState.sortDir === "asc" ? 1 : -1;
+          list = list.slice().sort((a, b) => String(a[key] || "").localeCompare(String(b[key] || ""), "id") * mult);
+        }
+        return list;
+      }
+      function renderCell(colKey, item, index) {
+        switch (colKey) {
+          case "no": return `<td>${index + 1}</td>`;
+          case "kode": return `<td><span class="code-badge">${escapeHtml(item.kode)}</span></td>`;
+          case "tanggal": return `<td style="white-space:nowrap;">${escapeHtml(item.tanggal)}</td>`;
+          case "kategori": return `<td style="white-space:nowrap;">${escapeHtml(item.kategori)}</td>`;
+          case "nama": return `<td><strong>${escapeHtml(item.nama)}</strong></td>`;
+          case "instansi": return `<td>${escapeHtml(item.instansi)}</td>`;
+          case "rincian": return `<td><div class="td-clamp" title="${escapeHtml(item.rincian)}">${escapeHtml(item.rincian)}</div></td>`;
+          case "status": return `<td><span class="status-badge ${statusBadgeClass(item.status)}">${escapeHtml(item.status)}</span></td>`;
+          case "aksi": return `<td><button type="button" class="btn-detail-row" data-detail-kode="${escapeHtml(item.kode)}">Detail</button></td>`;
+          default: return "<td>-</td>";
+        }
+      }
+      function renderGrid() {
+        renderGroupPanel();
+        const visibleCols = COLUMNS.filter((c) => c.visible);
+        const filtered = getFilteredAndSortedData();
+        const total = filtered.length;
+        const totalPages = Math.max(1, Math.ceil(total / gridState.pageSize));
+        if (gridState.page > totalPages) gridState.page = totalPages;
+        const startIdx = (gridState.page - 1) * gridState.pageSize;
+        const pageRows = filtered.slice(startIdx, startIdx + gridState.pageSize);
+
+        theadEl.innerHTML = "<tr>" + visibleCols.map((c) => {
+          const isSorted = gridState.sortKey === c.key;
+          const arrow = isSorted ? (gridState.sortDir === "asc" ? "▲" : "▼") : c.sortable ? "⇅" : "";
+          const dragAttr = c.groupable ? `draggable="true" data-drag-col="${c.key}" title="Seret kolom ini ke area grouping"` : "";
+          return `<th class="${c.sortable ? "sortable" : ""}" data-sort-col="${c.sortable ? c.key : ""}" ${dragAttr}><span class="th-content"><span>${escapeHtml(c.label)}</span>${arrow ? `<span class="sort-ind">${arrow}</span>` : ""}</span></th>`;
+        }).join("") + "</tr>";
+
+        theadEl.querySelectorAll("th[data-sort-col]").forEach((th) => {
+          const key = th.getAttribute("data-sort-col");
+          if (!key) return;
+          th.addEventListener("click", () => {
+            if (gridState.sortKey === key) gridState.sortDir = gridState.sortDir === "asc" ? "desc" : "asc";
+            else { gridState.sortKey = key; gridState.sortDir = "asc"; }
+            renderGrid();
+          });
+        });
+        theadEl.querySelectorAll("th[data-drag-col]").forEach((th) => {
+          th.addEventListener("dragstart", (e) => e.dataTransfer.setData("text/plain", th.getAttribute("data-drag-col")));
+        });
+
+        if (!pageRows.length) {
+          tbodyEl.innerHTML = `<tr><td colspan="${visibleCols.length}" style="text-align:center;padding:24px;color:var(--slate-500);">Tidak ada data permohonan informasi yang sesuai.</td></tr>`;
+        } else if (gridState.groupBy) {
+          const groupKey = gridState.groupBy;
+          const groupLabel = COLUMNS.find((c) => c.key === groupKey)?.label || groupKey;
+          const grouped = new Map();
+          pageRows.forEach((row, idx) => {
+            const gVal = row[groupKey] || "-";
+            if (!grouped.has(gVal)) grouped.set(gVal, []);
+            grouped.get(gVal).push({ row, idx: startIdx + idx });
+          });
+          let html = "";
+          grouped.forEach((entries, gVal) => {
+            html += `<tr class="dx-group-row"><td colspan="${visibleCols.length}">${escapeHtml(groupLabel)}: ${escapeHtml(gVal)} (${entries.length})</td></tr>`;
+            entries.forEach(({ row, idx }) => { html += "<tr>" + visibleCols.map((c) => renderCell(c.key, row, idx)).join("") + "</tr>"; });
+          });
+          tbodyEl.innerHTML = html;
+        } else {
+          tbodyEl.innerHTML = pageRows.map((row, idx) => "<tr>" + visibleCols.map((c) => renderCell(c.key, row, startIdx + idx)).join("") + "</tr>").join("");
+        }
+
+        tbodyEl.querySelectorAll("[data-detail-kode]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const found = requestsData.find((r) => r.kode === btn.getAttribute("data-detail-kode"));
+            if (found) showRequestDetailModal(found, false);
+          });
+        });
+
+        pageInfoEl.textContent = `Halaman ${gridState.page} dari ${totalPages} (${total} data)`;
+        let pagerHtml = `<button type="button" class="dx-page-btn" data-go-page="${gridState.page - 1}" ${gridState.page <= 1 ? "disabled" : ""}>&lsaquo;</button>`;
+        for (let p = 1; p <= totalPages; p++) pagerHtml += `<button type="button" class="dx-page-btn ${p === gridState.page ? "active" : ""}" data-go-page="${p}">${p}</button>`;
+        pagerHtml += `<button type="button" class="dx-page-btn" data-go-page="${gridState.page + 1}" ${gridState.page >= totalPages ? "disabled" : ""}>&rsaquo;</button>`;
+        pageNumsEl.innerHTML = pagerHtml;
+        pageNumsEl.querySelectorAll("[data-go-page]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const target = Number(btn.getAttribute("data-go-page"));
+            if (target >= 1 && target <= totalPages) { gridState.page = target; renderGrid(); }
+          });
+        });
+      }
+
+      groupPanelEl.addEventListener("dragover", (e) => { e.preventDefault(); groupPanelEl.classList.add("drop-active"); });
+      groupPanelEl.addEventListener("dragleave", () => groupPanelEl.classList.remove("drop-active"));
+      groupPanelEl.addEventListener("drop", (e) => {
+        e.preventDefault();
+        groupPanelEl.classList.remove("drop-active");
+        const colKey = e.dataTransfer.getData("text/plain");
+        if (colKey && COLUMNS.some((c) => c.key === colKey && c.groupable)) { gridState.groupBy = colKey; renderGrid(); }
+      });
+      document.getElementById("dxSearchInput")?.addEventListener("input", (e) => { gridState.search = e.target.value; gridState.page = 1; renderGrid(); });
+      const columnChooserBtn = document.getElementById("columnChooserBtn");
+      const columnChooserPopover = document.getElementById("columnChooserPopover");
+      columnChooserBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = columnChooserPopover.classList.toggle("open");
+        columnChooserBtn.setAttribute("aria-expanded", String(open));
+      });
+      columnChooserPopover?.addEventListener("click", (e) => e.stopPropagation());
+      document.addEventListener("click", () => { columnChooserPopover.classList.remove("open"); columnChooserBtn.setAttribute("aria-expanded", "false"); });
+      async function syncFromGoogleSheets(showDoneToast) {
+        if (!WEBHOOK_URL) {
+          loadingOverlayEl.classList.add("active");
+          setTimeout(() => {
+            renderGrid();
+            loadingOverlayEl.classList.remove("active");
+            if (showDoneToast) showToast("Daftar permohonan diperbarui.");
+          }, 320);
+          return;
+        }
+        loadingOverlayEl.classList.add("active");
+        try {
+          const resp = await fetch(WEBHOOK_URL);
+          const json = await resp.json();
+          if (json && json.ok && Array.isArray(json.data)) {
+            requestsData = json.data;
+            saveRequests(requestsData);
+            gridState.page = 1;
+            renderGrid();
+            if (showDoneToast) showToast("Data tersinkronisasi dari Google Sheets.", "success");
+          }
+        } catch (_) {
+          if (showDoneToast) showToast("Gagal menyinkronkan data dari Google Sheets.", "error");
+        } finally {
+          loadingOverlayEl.classList.remove("active");
+        }
+      }
+
+      document.getElementById("dxRefreshBtn")?.addEventListener("click", () => {
+        syncFromGoogleSheets(true);
+      });
+      document.querySelectorAll(".dx-size-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".dx-size-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          gridState.pageSize = Number(btn.getAttribute("data-size")) || 5;
+          gridState.page = 1;
+          renderGrid();
+        });
+      });
+
+      renderColumnChooser();
+      renderGrid();
+      if (WEBHOOK_URL) syncFromGoogleSheets(false);
+    })();
+  </script>
+</body>
+</html>
