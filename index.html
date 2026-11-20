@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulir Permohonan Informasi Publik - PPID Bapenda Kabupaten Kutai Barat</title>
   <meta name="description" content="Formulir Permohonan Informasi Publik PPID Badan Pendapatan Daerah (BAPENDA) Kabupaten Kutai Barat." />
+  <link rel="preconnect" href="https://challenges.cloudflare.com" />
   <style>
     /* ==========================================================================
        PPID BAPENDA KABUPATEN KUTAI BARAT — Versi Embed GitHub Pages untuk CMS-KUBAR
@@ -338,7 +339,7 @@
     }
     .btn-remove-file:hover { background: var(--red-600); color: var(--white); }
 
-    /* Slide To Verify */
+    /* Verifikasi Keamanan (Cloudflare Turnstile & Fallback Slide To Verify) */
     .verify-block {
       margin-top: 24px;
       padding-top: 22px;
@@ -347,6 +348,9 @@
       flex-direction: column;
       gap: 16px;
     }
+    .turnstile-box { display: flex; flex-direction: column; gap: 6px; min-height: 66px; }
+    .turnstile-status { font-size: 0.78rem; font-weight: 600; color: var(--amber-600); min-height: 0; }
+    .turnstile-status.is-error { color: var(--red-600); }
     .slide-verify-wrapper { max-width: 350px; width: 100%; }
     .slide-verify-track {
       position: relative; height: 46px; border-radius: var(--radius-sm);
@@ -739,11 +743,15 @@
             </div>
           </div>
 
-          <!-- Slide To Verify + Submit -->
+          <!-- Verifikasi Keamanan (Cloudflare Turnstile / Fallback Slide To Verify) + Submit -->
           <div class="verify-block">
             <div class="form-field" data-field="verify">
-              <label class="form-label" id="dragVerifyTitle">Drag To Verify <span class="req">*</span></label>
-              <div class="slide-verify-wrapper">
+              <label class="form-label" id="dragVerifyTitle">Verifikasi Keamanan <span class="req">*</span></label>
+              <div class="turnstile-box" id="turnstileBox" style="display:none;">
+                <div id="turnstileContainer"></div>
+                <div class="turnstile-status" id="turnstileStatus" aria-live="polite"></div>
+              </div>
+              <div class="slide-verify-wrapper" id="slideVerifyContainer">
                 <div class="slide-verify-track" id="slideVerifyTrack" role="group" aria-labelledby="dragVerifyTitle">
                   <div class="slide-verify-fill" id="slideVerifyFill"></div>
                   <div class="slide-verify-label" id="slideVerifyLabel">Slide To Verify</div>
@@ -755,7 +763,7 @@
                   </button>
                 </div>
               </div>
-              <span class="field-error">Silakan geser tombol "Slide To Verify" ke kanan untuk verifikasi.</span>
+              <span class="field-error" id="verifyErrorMsg">Silakan selesaikan verifikasi keamanan terlebih dahulu.</span>
             </div>
 
             <div class="form-actions">
@@ -885,14 +893,29 @@
       "use strict";
 
       /* ======================================================================
-         KONFIGURASI GOOGLE APPS SCRIPT (Isi dengan URL /exec Web App Anda)
+         KONFIGURASI GOOGLE APPS SCRIPT & CLOUDFLARE TURNSTILE
          ====================================================================== */
-      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw9_TaHoznMXNAj-sPpvUSZNwfD0zsU5d2WOlmMzJ8b9nZMB-lluESw892OFBVUCKWDOw/exec";
+      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzg85YY-ul4u6CFJFq0EAtz5WXTnNniTpKxWfQdFULXbhWXgJWSOt93NzWlwjx-k0148A/exec";
+      // Isi Site Key Cloudflare Turnstile Anda (dari Dashboard Cloudflare -> Turnstile -> Widget).
+      // AMAN ditaruh di sini. JANGAN pernah taruh Secret Key di sini (Secret Key hanya di Apps Script).
+      const TURNSTILE_SITE_KEY = "0x4AAAAAAGKTi10-XXl2OU1XQAWh235_sCg";
+
+      function sensorNamaInisial(nama) {
+        const cleaned = String(nama || "").trim();
+        if (!cleaned || cleaned === "-") return "-";
+        const words = cleaned.split(/\s+/);
+        const hasil = [];
+        for (let i = 0; i < words.length; i++) {
+          const match = words[i].match(/[A-Za-z0-9]/);
+          if (match) hasil.push(match[0].toUpperCase() + "***");
+        }
+        return hasil.length ? hasil.join(" ") : "-";
+      }
 
       const INITIAL_REQUESTS = [
-        { kode: "PMKB2501", tanggal: "18 November 2026", kategori: "Perorangan", nama: "Maria Magdalena", pekerjaan: "Wiraswasta", rincian: "Informasi persyaratan pengurangan dan pemutakhiran data SPPT PBB-P2 Kecamatan Barong Tongkok", tujuan: "Untuk penyesuaian data objek pajak daerah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
-        { kode: "PMKB2502", tanggal: "14 November 2026", kategori: "Mahasiswa/Pelajar", nama: "Yohanes Pratama", pekerjaan: "Mahasiswa", rincian: "Data realisasi Pendapatan Asli Daerah (PAD) sektor pajak daerah Kabupaten Kutai Barat Tahun 2025", tujuan: "Sebagai bahan penyusunan penelitian skripsi", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Diproses" },
-        { kode: "PMKB2503", tanggal: "10 November 2026", kategori: "Perorangan", nama: "Budi Santoso", pekerjaan: "Karyawan Swasta", rincian: "Prosedur pembayaran pajak daerah secara non-tunai dan layanan pelaporan pajak restoran", tujuan: "Untuk kepatuhan pelaporan pajak usaha", caraMemperoleh: "Melihat/membaca/mendengarkan/mencatat", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Dikirim" }
+        { kode: "PMKB2501", tanggal: "18 November 2026", kategori: "Perorangan", nama: sensorNamaInisial("Maria Magdalena"), pekerjaan: "Wiraswasta", rincian: "Informasi persyaratan pengurangan dan pemutakhiran data SPPT PBB-P2 Kecamatan Barong Tongkok", tujuan: "Untuk penyesuaian data objek pajak daerah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2502", tanggal: "14 November 2026", kategori: "Mahasiswa/Pelajar", nama: sensorNamaInisial("Yohanes Pratama"), pekerjaan: "Mahasiswa", rincian: "Data realisasi Pendapatan Asli Daerah (PAD) sektor pajak daerah Kabupaten Kutai Barat Tahun 2025", tujuan: "Sebagai bahan penyusunan penelitian skripsi", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Diproses" },
+        { kode: "PMKB2503", tanggal: "10 November 2026", kategori: "Perorangan", nama: sensorNamaInisial("Budi Santoso"), pekerjaan: "Karyawan Swasta", rincian: "Prosedur pembayaran pajak daerah secara non-tunai dan layanan pelaporan pajak restoran", tujuan: "Untuk kepatuhan pelaporan pajak usaha", caraMemperoleh: "Melihat/membaca/mendengarkan/mencatat", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Dikirim" }
       ];
 
       const STORAGE_KEY = "ppid_bapenda_kubar_permohonan_v2";
@@ -901,7 +924,9 @@
           const saved = localStorage.getItem(STORAGE_KEY);
           if (saved) {
             const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed)) return parsed;
+            if (Array.isArray(parsed)) {
+              return parsed.map((item) => Object.assign({}, item, { nama: sensorNamaInisial(item && item.nama) }));
+            }
           }
         } catch (_) {}
         return WEBHOOK_URL ? [] : INITIAL_REQUESTS.slice();
@@ -1028,14 +1053,84 @@
       uploadDropzone?.addEventListener("drop", (e) => { if (e.dataTransfer?.files?.[0]) handleSelectedFile(e.dataTransfer.files[0]); });
       removeFileBtn?.addEventListener("click", clearUploadedFile);
 
-      /* Slide To Verify */
+      /* Verifikasi Keamanan: Cloudflare Turnstile (otomatis aktif jika TURNSTILE_SITE_KEY diisi) + Fallback Slide To Verify */
+      const turnstileBox = document.getElementById("turnstileBox");
+      const turnstileStatusEl = document.getElementById("turnstileStatus");
+      const slideVerifyContainer = document.getElementById("slideVerifyContainer");
+      const verifyErrorMsg = document.getElementById("verifyErrorMsg");
       const verifyTrack = document.getElementById("slideVerifyTrack");
       const verifyFill = document.getElementById("slideVerifyFill");
       const verifyKnob = document.getElementById("slideVerifyKnob");
       const verifyLabel = document.getElementById("slideVerifyLabel");
       const verifyIcon = document.getElementById("slideVerifyIcon");
       const verifyFieldEl = document.querySelector('[data-field="verify"]');
+      const useTurnstile = Boolean(TURNSTILE_SITE_KEY && TURNSTILE_SITE_KEY.trim());
+      let turnstileToken = "";
+      let turnstileWidgetId = null;
       let isVerified = false, isDragging = false, startClientX = 0, currentOffset = 0;
+
+      function setTurnstileStatus(message, isError) {
+        if (!turnstileStatusEl) return;
+        turnstileStatusEl.textContent = message || "";
+        turnstileStatusEl.classList.toggle("is-error", Boolean(isError));
+      }
+
+      function renderTurnstileWidget() {
+        if (!useTurnstile || !window.turnstile || turnstileWidgetId !== null) return;
+        try {
+          turnstileWidgetId = window.turnstile.render("#turnstileContainer", {
+            sitekey: TURNSTILE_SITE_KEY.trim(),
+            theme: "light",
+            size: "normal",
+            language: "id",
+            "refresh-expired": "auto",
+            callback: function (token) {
+              turnstileToken = token || "";
+              isVerified = Boolean(turnstileToken);
+              verifyFieldEl.classList.remove("has-error");
+              setTurnstileStatus("", false);
+            },
+            "expired-callback": function () {
+              turnstileToken = "";
+              isVerified = false;
+              setTurnstileStatus("Sesi verifikasi kedaluwarsa, sedang memuat ulang...", false);
+            },
+            "timeout-callback": function () {
+              turnstileToken = "";
+              isVerified = false;
+              setTurnstileStatus("Verifikasi habis waktu. Silakan centang ulang.", true);
+            },
+            "error-callback": function () {
+              turnstileToken = "";
+              isVerified = false;
+              setTurnstileStatus("Terjadi kendala verifikasi keamanan. Coba centang ulang atau muat ulang halaman.", true);
+            }
+          });
+        } catch (_) {
+          setTurnstileStatus("Gagal menampilkan widget Cloudflare Turnstile. Muat ulang halaman.", true);
+        }
+      }
+
+      if (useTurnstile) {
+        if (turnstileBox) turnstileBox.style.display = "flex";
+        if (slideVerifyContainer) slideVerifyContainer.style.display = "none";
+        if (verifyErrorMsg) verifyErrorMsg.textContent = "Silakan selesaikan verifikasi keamanan Cloudflare Turnstile terlebih dahulu.";
+        window.__ppidOnTurnstileLoad = renderTurnstileWidget;
+        if (window.turnstile) {
+          renderTurnstileWidget();
+        } else {
+          const cfScript = document.createElement("script");
+          cfScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__ppidOnTurnstileLoad";
+          cfScript.async = true;
+          cfScript.defer = true;
+          cfScript.onerror = () => {
+            turnstileToken = "";
+            isVerified = false;
+            setTurnstileStatus("Gagal memuat Cloudflare Turnstile. Periksa koneksi internet Anda lalu muat ulang halaman.", true);
+          };
+          document.head.appendChild(cfScript);
+        }
+      }
 
       function getMaxSlide() { return Math.max(1, verifyTrack.clientWidth - verifyKnob.offsetWidth - 4); }
       function updateSliderPosition(px) {
@@ -1056,6 +1151,14 @@
       }
       function resetVerification() {
         isVerified = false; isDragging = false; currentOffset = 0;
+        if (useTurnstile) {
+          turnstileToken = "";
+          setTurnstileStatus("", false);
+          if (window.turnstile && turnstileWidgetId !== null) {
+            try { window.turnstile.reset(turnstileWidgetId); } catch (_) {}
+          }
+          return;
+        }
         verifyKnob.style.transition = "transform 0.22s ease";
         verifyFill.style.transition = "width 0.22s ease";
         verifyKnob.style.transform = "translateX(0px)";
@@ -1064,17 +1167,17 @@
         verifyLabel.textContent = "Slide To Verify";
         verifyIcon.innerHTML = '<polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline>';
       }
-      function startDrag(x) { if (isVerified) return; isDragging = true; startClientX = x - currentOffset; verifyKnob.style.transition = "none"; verifyFill.style.transition = "none"; }
-      function moveDrag(x) { if (!isDragging || isVerified) return; updateSliderPosition(x - startClientX); if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); }
-      function endDrag() { if (!isDragging || isVerified) return; isDragging = false; if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); else resetVerification(); }
+      function startDrag(x) { if (useTurnstile || isVerified) return; isDragging = true; startClientX = x - currentOffset; verifyKnob.style.transition = "none"; verifyFill.style.transition = "none"; }
+      function moveDrag(x) { if (useTurnstile || !isDragging || isVerified) return; updateSliderPosition(x - startClientX); if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); }
+      function endDrag() { if (useTurnstile || !isDragging || isVerified) return; isDragging = false; if (currentOffset >= getMaxSlide() * 0.92) completeVerification(); else resetVerification(); }
       verifyKnob.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
       window.addEventListener("mousemove", (e) => moveDrag(e.clientX));
       window.addEventListener("mouseup", endDrag);
       verifyKnob.addEventListener("touchstart", (e) => { if (e.touches[0]) startDrag(e.touches[0].clientX); }, { passive: true });
       window.addEventListener("touchmove", (e) => { if (isDragging && e.touches[0]) moveDrag(e.touches[0].clientX); }, { passive: true });
       window.addEventListener("touchend", endDrag);
-      verifyKnob.addEventListener("keydown", (e) => { if (!isVerified && (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); completeVerification(); } });
-      window.addEventListener("resize", () => { if (isVerified) verifyKnob.style.transform = `translateX(${getMaxSlide()}px)`; });
+      verifyKnob.addEventListener("keydown", (e) => { if (!useTurnstile && !isVerified && (e.key === "ArrowRight" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); completeVerification(); } });
+      window.addEventListener("resize", () => { if (!useTurnstile && isVerified) verifyKnob.style.transform = `translateX(${getMaxSlide()}px)`; });
 
       /* Form Validation & Submit */
       const permohonanForm = document.getElementById("permohonanForm");
@@ -1125,7 +1228,7 @@
           { field: "tujuan", valid: document.getElementById("tujuanInformasi").value.trim().length >= 5 },
           { field: "caraMemperoleh", valid: Boolean(document.getElementById("caraMemperoleh").value.trim()) },
           { field: "caraMendapatkan", valid: Boolean(document.getElementById("caraMendapatkan").value.trim()) },
-          { field: "verify", valid: isVerified }
+          { field: "verify", valid: useTurnstile ? Boolean(turnstileToken) : isVerified }
         ];
         checks.forEach((c) => {
           if (!c.valid) {
@@ -1165,10 +1268,12 @@
           caraMendapatkan: document.getElementById("caraMendapatkan").value,
           status: "Permohonan Informasi Dikirim",
           fileIdentitasNama: uploadedFileNameVal,
-          fileIdentitasBase64: uploadedFileDataUrl
+          fileIdentitasBase64: uploadedFileDataUrl,
+          turnstileToken: turnstileToken
         };
 
         try {
+          let serverNamaPublik = "";
           if (WEBHOOK_URL) {
             const resp = await fetch(WEBHOOK_URL, {
               method: "POST",
@@ -1179,6 +1284,7 @@
             if (resJson && resJson.ok === false) {
               throw new Error(resJson.error || "Gagal menyimpan ke Google Sheets");
             }
+            if (resJson && resJson.namaPublik) serverNamaPublik = resJson.namaPublik;
           } else {
             await new Promise((r) => setTimeout(r, 750));
           }
@@ -1187,7 +1293,7 @@
             kode: newItem.kode,
             tanggal: newItem.tanggal,
             kategori: newItem.kategori,
-            nama: newItem.nama,
+            nama: serverNamaPublik || sensorNamaInisial(newItem.nama),
             pekerjaan: newItem.pekerjaan,
             rincian: newItem.rincian,
             tujuan: newItem.tujuan,
@@ -1207,7 +1313,8 @@
           showToast("Permohonan berhasil dikirim! Kode: " + newItem.kode, "success");
           showRequestDetailModal(publicRecord, true);
         } catch (err) {
-          showToast("Gagal mengirim permohonan ke server. Coba lagi.", "error");
+          resetVerification();
+          showToast((err && err.message) ? err.message : "Gagal mengirim permohonan ke server. Coba lagi.", "error");
         } finally {
           submitFormBtn.disabled = false;
           submitBtnText.textContent = "Kirim Permohonan";
@@ -1241,7 +1348,7 @@
           <table class="detail-kv-table">
             <tr><th>Tanggal Permohonan</th><td>${escapeHtml(item.tanggal)}</td></tr>
             <tr><th>Kategori Permohonan</th><td>${escapeHtml(item.kategori)}</td></tr>
-            <tr><th>Nama Pemohon</th><td>${escapeHtml(item.nama)}</td></tr>
+            <tr><th>Nama Pemohon</th><td>${escapeHtml(sensorNamaInisial(item.nama))}</td></tr>
             <tr><th>Pekerjaan Pemohon</th><td>${escapeHtml(item.pekerjaan)}</td></tr>
           </table>
           <div class="detail-section-title">Data Permohonan</div>
@@ -1328,7 +1435,7 @@
           case "kode": return `<td><span class="code-badge">${escapeHtml(item.kode)}</span></td>`;
           case "tanggal": return `<td style="white-space:nowrap;">${escapeHtml(item.tanggal)}</td>`;
           case "kategori": return `<td style="white-space:nowrap;">${escapeHtml(item.kategori)}</td>`;
-          case "nama": return `<td><strong>${escapeHtml(item.nama)}</strong></td>`;
+          case "nama": return `<td><strong>${escapeHtml(sensorNamaInisial(item.nama))}</strong></td>`;
           case "rincian": return `<td><div class="td-clamp" title="${escapeHtml(item.rincian)}">${escapeHtml(item.rincian)}</div></td>`;
           case "status": return `<td><span class="status-badge ${statusBadgeClass(item.status)}">${escapeHtml(item.status)}</span></td>`;
           case "aksi": return `<td><button type="button" class="btn-detail-row" data-detail-kode="${escapeHtml(item.kode)}">Detail</button></td>`;
@@ -1440,7 +1547,7 @@
           const resp = await fetch(WEBHOOK_URL);
           const json = await resp.json();
           if (json && json.ok && Array.isArray(json.data)) {
-            requestsData = json.data;
+            requestsData = json.data.map((item) => Object.assign({}, item, { nama: sensorNamaInisial(item && item.nama) }));
             saveRequests(requestsData);
             gridState.page = 1;
             renderGrid();
