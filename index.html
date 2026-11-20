@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formulir Permohonan Informasi Publik - PPID Kabupaten Kutai Barat</title>
-  <meta name="description" content="Formulir Permohonan Informasi Publik PPID Pemerintah Kabupaten Kutai Barat (Versi Embed CMS-KUBAR)." />
+  <title>Formulir Permohonan Informasi Publik - PPID Bapenda Kabupaten Kutai Barat</title>
+  <meta name="description" content="Formulir Permohonan Informasi Publik PPID Badan Pendapatan Daerah (BAPENDA) Kabupaten Kutai Barat." />
   <style>
     /* ==========================================================================
-       PPID Kabupaten Kutai Barat — Versi Embed Iframe untuk CMS-KUBAR
-       Tanpa Header/Navbar/Footer agar tidak dobel di dalam halaman CMS-KUBAR
+       PPID BAPENDA KABUPATEN KUTAI BARAT — Versi Embed GitHub Pages untuk CMS-KUBAR
+       Khusus BAPENDA (Tanpa kolom Instansi yang Dituju)
        ========================================================================== */
     html {
       scroll-behavior: smooth;
@@ -77,7 +77,7 @@
       margin: 0 auto;
     }
 
-    /* Banner Identitas PPID Kutai Barat Ringkas */
+    /* Banner Identitas PPID Bapenda Kutai Barat */
     .embed-hero {
       background: linear-gradient(135deg, #0b243e 0%, #124478 58%, #0e6c67 100%);
       color: var(--white);
@@ -299,17 +299,6 @@
     .form-field.has-error .field-error { display: block; }
     .field-hint { font-size: 0.77rem; color: var(--slate-500); margin: 0; }
 
-    .instansi-filter-wrap { display: flex; flex-direction: column; gap: 8px; }
-    .instansi-search-input {
-      min-height: 36px;
-      padding: 6px 12px 6px 34px;
-      font-size: 0.83rem;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left 10px center;
-      background-color: var(--slate-50);
-    }
-
     /* File Upload */
     .upload-dropzone {
       position: relative;
@@ -481,7 +470,7 @@
       font-size: 0.77rem; font-weight: 600; cursor: pointer;
     }
     .btn-detail-row:hover { background: var(--blue-600); color: var(--white); }
-    .td-clamp { max-width: 260px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .td-clamp { max-width: 320px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
     .dx-pager {
       display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
@@ -499,7 +488,7 @@
     .dx-pages-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .dx-page-info { font-size: 0.79rem; color: var(--slate-500); }
 
-    /* Info Strip Bawah Ringkas */
+    /* Info Strip Bawah */
     .kubar-info-bar {
       margin-top: 20px;
       padding: 14px 18px;
@@ -559,7 +548,7 @@
 </head>
 <body>
   <div class="embed-container">
-    <!-- Banner Identitas Ringkas PPID Kabupaten Kutai Barat -->
+    <!-- Banner Identitas PPID Bapenda Kabupaten Kutai Barat -->
     <div class="embed-hero">
       <div class="embed-hero-left">
         <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -569,8 +558,8 @@
           <path d="M15 32.5C17.6 30.8 20.5 30.8 23.2 32.5C25.8 34.2 28.8 34.2 31.8 32.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
         <div>
-          <h1>Permohonan Informasi Publik — PPID Kabupaten Kutai Barat</h1>
-          <p>Pemerintah Kabupaten Kutai Barat &bull; Tanaa Purai Ngeriman</p>
+          <h1>Permohonan Informasi Publik — PPID Bapenda Kabupaten Kutai Barat</h1>
+          <p>Badan Pendapatan Daerah Pemerintah Kabupaten Kutai Barat &bull; Tanaa Purai Ngeriman</p>
         </div>
       </div>
       <div class="embed-hero-actions">
@@ -703,7 +692,7 @@
             </div>
           </div>
 
-          <!-- Section 2: Data Permohonan -->
+          <!-- Section 2: Data Permohonan (Khusus BAPENDA — Tanpa Instansi yang Dituju) -->
           <div class="form-section">
             <div class="section-title-row">
               <span class="section-badge">2</span>
@@ -711,17 +700,6 @@
             </div>
 
             <div class="form-grid">
-              <div class="form-field span-2" data-field="instansi">
-                <label class="form-label" for="instansiTujuan">Instansi yang Dituju <span class="req">*</span></label>
-                <div class="instansi-filter-wrap">
-                  <input type="search" id="instansiSearch" class="form-control instansi-search-input" placeholder="Cari Perangkat Daerah / Badan / Dinas / Kecamatan / Kelurahan Kutai Barat..." aria-label="Cari instansi Kutai Barat" />
-                  <select id="instansiTujuan" name="instansi" class="form-control" required>
-                    <option value="">-- Pilih Instansi yang Dituju --</option>
-                  </select>
-                </div>
-                <span class="field-error">Instansi yang dituju wajib dipilih.</span>
-              </div>
-
               <div class="form-field span-2" data-field="rincian">
                 <label class="form-label" for="rincianKebutuhan">Rincian Kebutuhan <span class="req">*</span></label>
                 <textarea id="rincianKebutuhan" name="rincian" class="form-control" rows="4" placeholder="Tuliskan rincian informasi publik yang dibutuhkan secara jelas dan spesifik..." required></textarea>
@@ -796,7 +774,7 @@
       <div class="card-header">
         <div class="card-header-text">
           <h2 id="daftarHeading">Daftar Permohonan Informasi</h2>
-          <p>Transparansi daftar permohonan informasi publik PPID Kabupaten Kutai Barat.</p>
+          <p>Transparansi daftar permohonan informasi publik PPID Bapenda Kabupaten Kutai Barat.</p>
         </div>
         <button type="button" class="btn-outline-list" id="openCekStatusFromTable">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -861,10 +839,10 @@
       </div>
     </section>
 
-    <!-- Info Sekretariat Ringkas PPID Kutai Barat -->
+    <!-- Info Sekretariat Ringkas PPID Bapenda Kutai Barat -->
     <div class="kubar-info-bar">
-      <div><strong>Sekretariat PPID Kabupaten Kutai Barat:</strong> Jalan Sendawar 1, Komplek Perkantoran Kabupaten Kutai Barat, Kec. Barong Tongkok</div>
-      <div><strong>Email:</strong> ppid.kutaibarat01@gmail.com</div>
+      <div><strong>PPID Badan Pendapatan Daerah (BAPENDA) Kabupaten Kutai Barat:</strong> Komplek Perkantoran Pemkab Kutai Barat, Kec. Barong Tongkok, Sendawar</div>
+      <div><strong>Pemerintah Kabupaten Kutai Barat</strong></div>
     </div>
   </div>
 
@@ -890,7 +868,7 @@
         <button type="button" class="modal-close" data-close-modal="cekStatusModal" aria-label="Tutup">&times;</button>
       </div>
       <div class="modal-body">
-        <p style="margin-top:0;color:var(--slate-600);font-size:0.86rem;">Masukkan Kode Permohonan untuk mengetahui status permohonan Anda (contoh: <strong>PMKB2501</strong> atau <strong>PMKB2502</strong>).</p>
+        <p style="margin-top:0;color:var(--slate-600);font-size:0.86rem;">Masukkan Kode Permohonan untuk mengetahui status permohonan Anda.</p>
         <form id="cekStatusForm" style="display:flex;gap:10px;margin-bottom:14px;">
           <input type="text" id="cekStatusInput" class="form-control" placeholder="Masukkan kode permohonan..." required style="text-transform:uppercase;" />
           <button type="submit" class="btn btn-primary" style="flex-shrink:0;">Cek</button>
@@ -907,101 +885,26 @@
       "use strict";
 
       /* ======================================================================
-         KONFIGURASI BACKEND OPSIONAL (Google Apps Script / API Server Kubar)
-         Isi WEBHOOK_URL dengan URL Web App Google Apps Script jika ingin data
-         kiriman otomatis masuk ke Google Sheets & Google Drive PPID Kubar.
-         Jika dikosongkan (""), data tersimpan lokal di browser untuk uji coba.
+         KONFIGURASI GOOGLE APPS SCRIPT (Isi dengan URL /exec Web App Anda)
          ====================================================================== */
-      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyMyGP0r6l6Ea1YZLa_gchpcP-LRbuPGonOAVY7s6EN-ku4WuGeIFndJhyzPcaJ02Q/exec";
-
-      /* Daftar Lengkap 53 Instansi Resmi Pemerintah Kabupaten Kutai Barat */
-      const INSTANSI_KUBAR = [
-        // PPID Utama, Sekretariat & Pengawasan
-        { name: "PPID UTAMA KABUPATEN KUTAI BARAT (DISKOMINFO)", category: "PPID Utama & Sekretariat" },
-        { name: "SEKRETARIAT DAERAH KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
-        { name: "SEKRETARIAT DPRD KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
-        { name: "INSPEKTORAT DAERAH KABUPATEN KUTAI BARAT", category: "PPID Utama & Sekretariat" },
-
-        // Badan (6)
-        { name: "BADAN PERENCANAAN PEMBANGUNAN DAERAH, PENELITIAN DAN PENGEMBANGAN (BAPPEDALITBANG)", category: "Badan" },
-        { name: "BADAN KEUANGAN DAN ASET DAERAH (BKAD)", category: "Badan" },
-        { name: "BADAN PENDAPATAN DAERAH (BAPENDA)", category: "Badan" },
-        { name: "BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA (BKPSDM)", category: "Badan" },
-        { name: "BADAN KESATUAN BANGSA DAN POLITIK (KESBANGPOL)", category: "Badan" },
-        { name: "BADAN PENANGGULANGAN BENCANA DAERAH (BPBD)", category: "Badan" },
-
-        // Dinas (19)
-        { name: "DINAS PENDIDIKAN DAN KEBUDAYAAN", category: "Dinas" },
-        { name: "DINAS KESEHATAN", category: "Dinas" },
-        { name: "DINAS PEKERJAAN UMUM DAN PENATAAN RUANG (PUPR)", category: "Dinas" },
-        { name: "DINAS SOSIAL", category: "Dinas" },
-        { name: "DINAS TENAGA KERJA DAN TRANSMIGRASI", category: "Dinas" },
-        { name: "DINAS KETAHANAN PANGAN", category: "Dinas" },
-        { name: "DINAS LINGKUNGAN HIDUP", category: "Dinas" },
-        { name: "DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL (DISDUKCAPIL)", category: "Dinas" },
-        { name: "DINAS PEMBERDAYAAN MASYARAKAT DAN KAMPUNG (DPMK)", category: "Dinas" },
-        { name: "DINAS PENGENDALIAN PENDUDUK, KB, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK", category: "Dinas" },
-        { name: "DINAS PERHUBUNGAN", category: "Dinas" },
-        { name: "DINAS KOMUNIKASI DAN INFORMATIKA (DISKOMINFO)", category: "Dinas" },
-        { name: "DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU (DPMPTSP)", category: "Dinas" },
-        { name: "DINAS PEMUDA DAN OLAHRAGA (DISPORA)", category: "Dinas" },
-        { name: "DINAS KEARSIPAN DAN PERPUSTAKAAN", category: "Dinas" },
-        { name: "DINAS PARIWISATA", category: "Dinas" },
-        { name: "DINAS PERTANIAN", category: "Dinas" },
-        { name: "DINAS PERIKANAN", category: "Dinas" },
-        { name: "DINAS PERDAGANGAN, KOPERASI, UKM DAN PERINDUSTRIAN", category: "Dinas" },
-
-        // Satpol PP, RSUD & BUMD
-        { name: "SATUAN POLISI PAMONG PRAJA (SATPOL PP)", category: "RSUD, Satpol PP & BUMD" },
-        { name: "RSUD HARAPAN INSAN SENDAWAR", category: "RSUD, Satpol PP & BUMD" },
-        { name: "RSUD MANGKU JAYA LINGGANG", category: "RSUD, Satpol PP & BUMD" },
-        { name: "PERUMDAM TIRTA SENDAWAR", category: "RSUD, Satpol PP & BUMD" },
-
-        // 16 Kecamatan Kabupaten Kutai Barat
-        { name: "KECAMATAN BARONG TONGKOK", category: "Kecamatan" },
-        { name: "KECAMATAN BENTIAN BESAR", category: "Kecamatan" },
-        { name: "KECAMATAN BONGAN", category: "Kecamatan" },
-        { name: "KECAMATAN DAMAI", category: "Kecamatan" },
-        { name: "KECAMATAN JEMPANG", category: "Kecamatan" },
-        { name: "KECAMATAN LINGGANG BIGUNG", category: "Kecamatan" },
-        { name: "KECAMATAN LONG IRAM", category: "Kecamatan" },
-        { name: "KECAMATAN MELAK", category: "Kecamatan" },
-        { name: "KECAMATAN MOOK MANAAR BULATN", category: "Kecamatan" },
-        { name: "KECAMATAN MUARA LAWA", category: "Kecamatan" },
-        { name: "KECAMATAN MUARA PAHU", category: "Kecamatan" },
-        { name: "KECAMATAN NYUATAN", category: "Kecamatan" },
-        { name: "KECAMATAN PENYINGGAHAN", category: "Kecamatan" },
-        { name: "KECAMATAN SEKOLAQ DARAT", category: "Kecamatan" },
-        { name: "KECAMATAN SILUQ NGURAI", category: "Kecamatan" },
-        { name: "KECAMATAN TERING", category: "Kecamatan" },
-
-        // 4 Kelurahan Kabupaten Kutai Barat
-        { name: "KELURAHAN BARONG TONGKOK", category: "Kelurahan" },
-        { name: "KELURAHAN SIMPANG RAYA", category: "Kelurahan" },
-        { name: "KELURAHAN MELAK ILIR", category: "Kelurahan" },
-        { name: "KELURAHAN MELAK ULU", category: "Kelurahan" }
-      ];
+      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw9_TaHoznMXNAj-sPpvUSZNwfD0zsU5d2WOlmMzJ8b9nZMB-lluESw892OFBVUCKWDOw/exec";
 
       const INITIAL_REQUESTS = [
-        { kode: "PMKB2501", tanggal: "18 November 2026", kategori: "Mahasiswa/Pelajar", nama: "Yohanes Pratama", pekerjaan: "Mahasiswa", instansi: "DINAS PEMBERDAYAAN MASYARAKAT DAN KAMPUNG (DPMK)", rincian: "Data rekapitulasi dana kampung dan jumlah kampung pada 16 kecamatan Kabupaten Kutai Barat", tujuan: "Sebagai bahan penyusunan penelitian skripsi", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Dikirim" },
-        { kode: "PMKB2502", tanggal: "15 November 2026", kategori: "Perorangan", nama: "Maria Magdalena", pekerjaan: "Wiraswasta", instansi: "DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU (DPMPTSP)", rincian: "Standar pelayanan dan persyaratan perizinan berusaha sektor perdagangan di Sendawar", tujuan: "Untuk kelengkapan pengurusan izin usaha", caraMemperoleh: "Melihat/membaca/mendengarkan/mencatat", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Selesai" },
-        { kode: "PMKB2503", tanggal: "11 November 2026", kategori: "Perorangan", nama: "Dedy Kurniawan", pekerjaan: "Guru", instansi: "DINAS PENDIDIKAN DAN KEBUDAYAAN", rincian: "Informasi kalender pendidikan dan rekap sebaran satuan pendidikan di Kecamatan Barong Tongkok", tujuan: "Untuk bahan edukasi dan penyusunan program belajar", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
-        { kode: "PMKB2504", tanggal: "08 November 2026", kategori: "Badan Hukum / Lembaga", nama: "Kelompok Tani Harapan Sendawar", pekerjaan: "Pengurus Kelompok Tani", instansi: "DINAS PERTANIAN", rincian: "Informasi program bantuan bibit dan sarana prasarana pertanian Kabupaten Kutai Barat", tujuan: "Sebagai acuan pengajuan usulan kelompok tani kampung", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Mengambil Langsung", status: "Permohonan Informasi Diproses" },
-        { kode: "PMKB2505", tanggal: "04 November 2026", kategori: "Perorangan", nama: "Rina Lestari", pekerjaan: "Peneliti", instansi: "DINAS PEKERJAAN UMUM DAN PENATAAN RUANG (PUPR)", rincian: "Data panjang jalan kabupaten menurut kondisi permukaan di Kecamatan Melak dan Sekolaq Darat", tujuan: "Sebagai data dukung kajian pembangunan wilayah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
-        { kode: "PMKB2506", tanggal: "01 November 2026", kategori: "Perorangan", nama: "Budi Santoso", pekerjaan: "Karyawan Swasta", instansi: "BADAN KEUANGAN DAN ASET DAERAH (BKAD)", rincian: "Ringkasan Laporan Realisasi APBD Kabupaten Kutai Barat Tahun Anggaran berjalan", tujuan: "Untuk keterbukaan dan informasi publik masyarakat", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
-        { kode: "PMKB2507", tanggal: "28 October 2026", kategori: "Mahasiswa/Pelajar", nama: "Sari Wulandari", pekerjaan: "Mahasiswa", instansi: "DINAS PARIWISATA", rincian: "Data jumlah kunjungan wisata dan daftar objek wisata budaya di Kecamatan Jempang dan Damai", tujuan: "Untuk bahan tugas akhir pariwisata daerah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Diproses" }
+        { kode: "PMKB2501", tanggal: "18 November 2026", kategori: "Perorangan", nama: "Maria Magdalena", pekerjaan: "Wiraswasta", rincian: "Informasi persyaratan pengurangan dan pemutakhiran data SPPT PBB-P2 Kecamatan Barong Tongkok", tujuan: "Untuk penyesuaian data objek pajak daerah", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Selesai" },
+        { kode: "PMKB2502", tanggal: "14 November 2026", kategori: "Mahasiswa/Pelajar", nama: "Yohanes Pratama", pekerjaan: "Mahasiswa", rincian: "Data realisasi Pendapatan Asli Daerah (PAD) sektor pajak daerah Kabupaten Kutai Barat Tahun 2025", tujuan: "Sebagai bahan penyusunan penelitian skripsi", caraMemperoleh: "Mendapat salinan hard copy/soft copy", caraMendapatkan: "Email", status: "Permohonan Informasi Diproses" },
+        { kode: "PMKB2503", tanggal: "10 November 2026", kategori: "Perorangan", nama: "Budi Santoso", pekerjaan: "Karyawan Swasta", rincian: "Prosedur pembayaran pajak daerah secara non-tunai dan layanan pelaporan pajak restoran", tujuan: "Untuk kepatuhan pelaporan pajak usaha", caraMemperoleh: "Melihat/membaca/mendengarkan/mencatat", caraMendapatkan: "Whatsapp", status: "Permohonan Informasi Dikirim" }
       ];
 
-      const STORAGE_KEY = "ppid_kubar_permohonan_v1";
+      const STORAGE_KEY = "ppid_bapenda_kubar_permohonan_v2";
       function loadRequests() {
         try {
           const saved = localStorage.getItem(STORAGE_KEY);
           if (saved) {
             const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+            if (Array.isArray(parsed)) return parsed;
           }
         } catch (_) {}
-        return INITIAL_REQUESTS.slice();
+        return WEBHOOK_URL ? [] : INITIAL_REQUESTS.slice();
       }
       function saveRequests(list) {
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch (_) {}
@@ -1010,6 +913,7 @@
       let requestsData = loadRequests();
       let uploadedFileDataUrl = "";
       let uploadedFileNameVal = "";
+      let uploadedFileValid = false;
 
       function escapeHtml(str) {
         return String(str ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -1030,12 +934,8 @@
       }
 
       /* Modals */
-      function openModal(id) {
-        document.getElementById(id)?.classList.add("open");
-      }
-      function closeModal(id) {
-        document.getElementById(id)?.classList.remove("open");
-      }
+      function openModal(id) { document.getElementById(id)?.classList.add("open"); }
+      function closeModal(id) { document.getElementById(id)?.classList.remove("open"); }
       document.querySelectorAll("[data-close-modal]").forEach((btn) => {
         btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
       });
@@ -1052,33 +952,7 @@
         });
       });
 
-      /* Populate & Filter Instansi Kubar */
-      const instansiSelect = document.getElementById("instansiTujuan");
-      const instansiSearch = document.getElementById("instansiSearch");
-      function populateInstansiOptions(filterText) {
-        const prev = instansiSelect.value;
-        const q = (filterText || "").toLowerCase().trim();
-        const groups = ["PPID Utama & Sekretariat", "Badan", "Dinas", "RSUD, Satpol PP & BUMD", "Kecamatan", "Kelurahan"];
-        instansiSelect.innerHTML = '<option value="">-- Pilih Instansi yang Dituju --</option>';
-        groups.forEach((cat) => {
-          const items = INSTANSI_KUBAR.filter((p) => p.category === cat && (!q || p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)));
-          if (!items.length) return;
-          const og = document.createElement("optgroup");
-          og.label = cat;
-          items.forEach((item) => {
-            const opt = document.createElement("option");
-            opt.value = item.name;
-            opt.textContent = item.name;
-            if (item.name === prev) opt.selected = true;
-            og.appendChild(opt);
-          });
-          instansiSelect.appendChild(og);
-        });
-      }
-      populateInstansiOptions("");
-      instansiSearch?.addEventListener("input", (e) => populateInstansiOptions(e.target.value));
-
-      /* Upload Identitas */
+      /* Upload Identitas + Kompresi Otomatis Foto Besar */
       const uploadInput = document.getElementById("uploadIdentitas");
       const uploadDropzone = document.getElementById("uploadDropzone");
       const uploadPreview = document.getElementById("uploadPreview");
@@ -1088,7 +962,6 @@
       const removeFileBtn = document.getElementById("removeFileBtn");
       const uploadErrorMsg = document.getElementById("uploadErrorMsg");
       const uploadFieldEl = document.querySelector('[data-field="uploadIdentitas"]');
-      let uploadedFileValid = false;
 
       function formatBytes(bytes) {
         if (bytes < 1024) return bytes + " B";
@@ -1103,6 +976,20 @@
         uploadPreview.classList.remove("active");
         uploadDropzone.style.display = "flex";
         uploadThumb.src = "";
+      }
+      function compressIfNeeded(dataUrl, rawSize, callback) {
+        if (rawSize <= 1.5 * 1024 * 1024) { callback(dataUrl); return; }
+        const img = new Image();
+        img.onload = () => {
+          const maxW = 1600, scale = img.width > maxW ? maxW / img.width : 1;
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.round(img.width * scale);
+          canvas.height = Math.round(img.height * scale);
+          canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+          callback(canvas.toDataURL("image/jpeg", 0.82));
+        };
+        img.onerror = () => callback(dataUrl);
+        img.src = dataUrl;
       }
       function handleSelectedFile(file) {
         if (!file) { clearUploadedFile(); return; }
@@ -1128,8 +1015,10 @@
         uploadPreview.classList.add("active");
         const reader = new FileReader();
         reader.onload = (ev) => {
-          uploadedFileDataUrl = ev.target.result;
-          uploadThumb.src = uploadedFileDataUrl;
+          compressIfNeeded(ev.target.result, file.size, (finalDataUrl) => {
+            uploadedFileDataUrl = finalDataUrl;
+            uploadThumb.src = finalDataUrl;
+          });
         };
         reader.readAsDataURL(file);
       }
@@ -1213,8 +1102,6 @@
       });
       resetFormBtn?.addEventListener("click", () => {
         permohonanForm.reset();
-        instansiSearch.value = "";
-        populateInstansiOptions("");
         clearUploadedFile();
         resetVerification();
         clearAllErrors();
@@ -1234,7 +1121,6 @@
           { field: "pekerjaan", valid: document.getElementById("pekerjaanPemohon").value.trim().length >= 2 },
           { field: "noHp", valid: /^[0-9+\-\s]{9,18}$/.test(document.getElementById("noHpPemohon").value.trim()) },
           { field: "email", valid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById("emailPemohon").value.trim()) },
-          { field: "instansi", valid: Boolean(document.getElementById("instansiTujuan").value.trim()) },
           { field: "rincian", valid: document.getElementById("rincianKebutuhan").value.trim().length >= 5 },
           { field: "tujuan", valid: document.getElementById("tujuanInformasi").value.trim().length >= 5 },
           { field: "caraMemperoleh", valid: Boolean(document.getElementById("caraMemperoleh").value.trim()) },
@@ -1273,7 +1159,6 @@
           pekerjaan: document.getElementById("pekerjaanPemohon").value.trim(),
           noHp: document.getElementById("noHpPemohon").value.trim(),
           email: document.getElementById("emailPemohon").value.trim(),
-          instansi: document.getElementById("instansiTujuan").value,
           rincian: document.getElementById("rincianKebutuhan").value.trim(),
           tujuan: document.getElementById("tujuanInformasi").value.trim(),
           caraMemperoleh: document.getElementById("caraMemperoleh").value,
@@ -1304,7 +1189,6 @@
             kategori: newItem.kategori,
             nama: newItem.nama,
             pekerjaan: newItem.pekerjaan,
-            instansi: newItem.instansi,
             rincian: newItem.rincian,
             tujuan: newItem.tujuan,
             caraMemperoleh: newItem.caraMemperoleh,
@@ -1318,8 +1202,6 @@
           renderGrid();
 
           permohonanForm.reset();
-          instansiSearch.value = "";
-          populateInstansiOptions("");
           clearUploadedFile();
           resetVerification();
           showToast("Permohonan berhasil dikirim! Kode: " + newItem.kode, "success");
@@ -1342,7 +1224,7 @@
         const receiptHtml = isReceipt
           ? `<div class="receipt-box">
               <div style="font-weight:700;color:var(--teal-600);font-size:0.93rem;">Permohonan Informasi Berhasil Dikirim</div>
-              <div style="font-size:0.81rem;color:var(--slate-700);margin-top:3px;">Simpan kode permohonan berikut untuk memantau status layanan PPID Kutai Barat:</div>
+              <div style="font-size:0.81rem;color:var(--slate-700);margin-top:3px;">Simpan kode permohonan berikut untuk memantau status layanan PPID Bapenda Kutai Barat:</div>
               <div class="receipt-code-row">
                 <span class="receipt-code">${escapeHtml(item.kode)}</span>
                 <button type="button" class="btn-detail-row" id="copyCodeBtn">Salin Kode</button>
@@ -1364,7 +1246,6 @@
           </table>
           <div class="detail-section-title">Data Permohonan</div>
           <table class="detail-kv-table">
-            <tr><th>Instansi yang Dituju</th><td>${escapeHtml(item.instansi)}</td></tr>
             <tr><th>Rincian Kebutuhan</th><td>${escapeHtml(item.rincian)}</td></tr>
             <tr><th>Tujuan Informasi</th><td>${escapeHtml(item.tujuan)}</td></tr>
             <tr><th>Cara Memperoleh Informasi</th><td>${escapeHtml(item.caraMemperoleh)}</td></tr>
@@ -1392,14 +1273,13 @@
         resultEl.innerHTML = renderDetailHtml(found, false);
       });
 
-      /* DataGrid */
+      /* DataGrid (Tanpa Kolom Instansi yang Dituju) */
       const COLUMNS = [
         { key: "no", label: "#", sortable: false, groupable: false, visible: true },
         { key: "kode", label: "Kode", sortable: true, groupable: false, visible: true },
         { key: "tanggal", label: "Tanggal", sortable: true, groupable: false, visible: true },
         { key: "kategori", label: "Kategori", sortable: true, groupable: true, visible: true },
         { key: "nama", label: "Nama Pemohon", sortable: true, groupable: false, visible: true },
-        { key: "instansi", label: "Instansi yang Dituju", sortable: true, groupable: true, visible: true },
         { key: "rincian", label: "Rincian Kebutuhan", sortable: false, groupable: false, visible: true },
         { key: "status", label: "Status", sortable: true, groupable: true, visible: true },
         { key: "aksi", label: "Aksi", sortable: false, groupable: false, visible: true }
@@ -1435,7 +1315,7 @@
       }
       function getFilteredAndSortedData() {
         const q = gridState.search.toLowerCase().trim();
-        let list = requestsData.filter((item) => !q || item.kode.toLowerCase().includes(q) || item.nama.toLowerCase().includes(q) || item.kategori.toLowerCase().includes(q) || item.instansi.toLowerCase().includes(q) || item.rincian.toLowerCase().includes(q) || item.status.toLowerCase().includes(q) || item.tanggal.toLowerCase().includes(q));
+        let list = requestsData.filter((item) => !q || item.kode.toLowerCase().includes(q) || item.nama.toLowerCase().includes(q) || item.kategori.toLowerCase().includes(q) || item.rincian.toLowerCase().includes(q) || item.status.toLowerCase().includes(q) || item.tanggal.toLowerCase().includes(q));
         if (gridState.sortKey) {
           const key = gridState.sortKey, mult = gridState.sortDir === "asc" ? 1 : -1;
           list = list.slice().sort((a, b) => String(a[key] || "").localeCompare(String(b[key] || ""), "id") * mult);
@@ -1449,7 +1329,6 @@
           case "tanggal": return `<td style="white-space:nowrap;">${escapeHtml(item.tanggal)}</td>`;
           case "kategori": return `<td style="white-space:nowrap;">${escapeHtml(item.kategori)}</td>`;
           case "nama": return `<td><strong>${escapeHtml(item.nama)}</strong></td>`;
-          case "instansi": return `<td>${escapeHtml(item.instansi)}</td>`;
           case "rincian": return `<td><div class="td-clamp" title="${escapeHtml(item.rincian)}">${escapeHtml(item.rincian)}</div></td>`;
           case "status": return `<td><span class="status-badge ${statusBadgeClass(item.status)}">${escapeHtml(item.status)}</span></td>`;
           case "aksi": return `<td><button type="button" class="btn-detail-row" data-detail-kode="${escapeHtml(item.kode)}">Detail</button></td>`;
@@ -1487,7 +1366,7 @@
         });
 
         if (!pageRows.length) {
-          tbodyEl.innerHTML = `<tr><td colspan="${visibleCols.length}" style="text-align:center;padding:24px;color:var(--slate-500);">Tidak ada data permohonan informasi yang sesuai.</td></tr>`;
+          tbodyEl.innerHTML = `<tr><td colspan="${visibleCols.length}" style="text-align:center;padding:24px;color:var(--slate-500);">Belum ada data permohonan informasi.</td></tr>`;
         } else if (gridState.groupBy) {
           const groupKey = gridState.groupBy;
           const groupLabel = COLUMNS.find((c) => c.key === groupKey)?.label || groupKey;
@@ -1545,6 +1424,7 @@
       });
       columnChooserPopover?.addEventListener("click", (e) => e.stopPropagation());
       document.addEventListener("click", () => { columnChooserPopover.classList.remove("open"); columnChooserBtn.setAttribute("aria-expanded", "false"); });
+
       async function syncFromGoogleSheets(showDoneToast) {
         if (!WEBHOOK_URL) {
           loadingOverlayEl.classList.add("active");
@@ -1573,9 +1453,7 @@
         }
       }
 
-      document.getElementById("dxRefreshBtn")?.addEventListener("click", () => {
-        syncFromGoogleSheets(true);
-      });
+      document.getElementById("dxRefreshBtn")?.addEventListener("click", () => syncFromGoogleSheets(true));
       document.querySelectorAll(".dx-size-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           document.querySelectorAll(".dx-size-btn").forEach((b) => b.classList.remove("active"));
